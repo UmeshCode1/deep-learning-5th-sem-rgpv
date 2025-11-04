@@ -1,0 +1,13 @@
+# Deep Learning Dependencies
+# Note: TensorFlow may require Python 3.9-3.12. If using Python 3.14, use tf-nightly or switch to PyTorch.
+# For Python 3.14+, comment out tensorflow and use torch primarily
+tensorflow>=2.10; python_version<'3.13'
+torch
+torchvision
+numpy
+pandas
+matplotlib
+jupyter
+scikit-learn
+seaborn
+keras

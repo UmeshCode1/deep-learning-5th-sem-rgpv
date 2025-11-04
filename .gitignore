@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+env/
+.ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# Data
+datasets/**
+
+# Node
+ui/node_modules/
+ui/.vite/
+ui/dist/
+
+# VS Code
+.vscode/
+.history/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/
+
+# Coverage
+coverage/
+*.cover
+*.coverage
+
+# Swap files
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
