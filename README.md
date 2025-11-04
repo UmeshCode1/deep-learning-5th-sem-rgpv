@@ -4,6 +4,17 @@
 	<img src="assets/banner.svg" alt="Deep Learning (AL503B) — RGPV 5th Semester" width="100%" />
 </p>
 
+<p align="center">
+	<a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/actions/workflows/deploy-ui.yml">
+		<img src="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/actions/workflows/deploy-ui.yml/badge.svg" alt="Deploy UI" />
+	</a>
+	<a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/actions/workflows/ui-build.yml">
+		<img src="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/actions/workflows/ui-build.yml/badge.svg" alt="UI Build (CI)" />
+	</a>
+</p>
+
+> Deployed site (after first successful run): https://umeshcode1.github.io/deep-learning-5th-sem-rgpv/
+
 ### Developed by: Umesh Patel  
 #### Vice President — AI & Machine Learning Club, OCT  
 #### Under guidance of: Department of Computer Science & Engineering (AI & ML)
