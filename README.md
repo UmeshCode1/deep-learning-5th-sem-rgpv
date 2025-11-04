@@ -240,6 +240,7 @@ Details: see `docs/DEPLOY_PAGES.md`.
 - Deploy to Pages: `docs/DEPLOY_PAGES.md`
 - Quick start: `QUICK_START.md`
 - Status & notes: `STATUS.md`
+- Repo About (description/website/topics): `docs/REPO_METADATA.md`
 
 ## ⚙️ Additional Files
 
