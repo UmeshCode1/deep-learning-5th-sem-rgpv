@@ -53,6 +53,21 @@ To introduce deep learning fundamentals and major algorithms, the problem settin
 
 - Implement MLP using NumPy/TensorFlow
 - Autoencoder on MNIST
+ - CNN on CIFAR-10
+ - RNN Text Generation
+ - GAN Image Generation
+
+## 🧾 Assignments
+
+Unit-wise assignments with theory + hands-on tasks are available in `assignments/`:
+
+- Unit 1 — Foundations, MLPs, PCA → `assignments/unit1.md`
+- Unit 2 — Optimization & Autoencoders → `assignments/unit2.md`
+- Unit 3 — CNN Architectures → `assignments/unit3.md`
+- Unit 4 — RNNs, LSTM, Attention → `assignments/unit4.md`
+- Unit 5 — Generative Models & GANs → `assignments/unit5.md`
+
+Expected outputs for each practical are summarized under `practicals/outputs/`.
 - CNN on CIFAR-10
 - RNN/LSTM for Text Generation
 - GAN for Synthetic Image Generation

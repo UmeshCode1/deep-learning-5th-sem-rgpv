@@ -5,6 +5,7 @@ import SyllabusView from './components/SyllabusView'
 import PracticalsView from './components/PracticalsView'
 import DeveloperInfo from './components/DeveloperInfo'
 import Hero from './components/Hero'
+import AssignmentsView from './components/AssignmentsView'
 
 export default function App(){
   return (
@@ -23,6 +24,7 @@ function AppContent(){
         <DeveloperInfo />
         <SyllabusView />
         <PracticalsView />
+        <AssignmentsView />
       </main>
       <footer className="bg-slate-900/50 dark:bg-slate-900/50 light:bg-white/50 backdrop-blur-sm border-t border-purple-500/20 py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-400 dark:text-gray-400 light:text-gray-700">

@@ -26,6 +26,7 @@ export default function Navbar(){
             <NavLink href="#developer" icon="👨‍💻" label="Developer" />
             <NavLink href="#syllabus" icon="📚" label="Syllabus" />
             <NavLink href="#practicals" icon="💻" label="Practicals" />
+            <NavLink href="#assignments" icon="📄" label="Assignments" />
             
             {/* Theme Toggle */}
             <button
