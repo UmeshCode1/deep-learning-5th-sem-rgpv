@@ -1,5 +1,9 @@
 # Deep Learning (AL 503(B)) – RGPV Bhopal (5th Semester)
 
+<p align="center">
+	<img src="assets/banner.svg" alt="Deep Learning (AL503B) — RGPV 5th Semester" width="100%" />
+</p>
+
 ### Developed by: Umesh Patel  
 #### Vice President — AI & Machine Learning Club, OCT  
 #### Under guidance of: Department of Computer Science & Engineering (AI & ML)

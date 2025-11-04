@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" fill="url(#g2)"/>
+  <circle cx="150" cy="320" r="180" fill="#7c3aed" opacity="0.15"/>
+  <circle cx="1100" cy="60" r="160" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="800" cy="300" r="120" fill="#ec4899" opacity="0.1"/>
+  <g filter="url(#glow)">
+    <text x="60" y="150" font-family="Inter, Segoe UI, Roboto, Arial" font-size="28" fill="#a78bfa" opacity="0.9">RGPV Bhopal • 5th Semester • AL 503(B)</text>
+    <text x="60" y="240" font-family="Inter, Segoe UI, Roboto, Arial" font-size="82" font-weight="800" fill="url(#g1)">Deep Learning</text>
+    <text x="64" y="290" font-family="Inter, Segoe UI, Roboto, Arial" font-size="22" fill="#cbd5e1">Notes • Practicals • React UI • PyTorch</text>
+  </g>
+</svg>
