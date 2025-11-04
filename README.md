@@ -51,11 +51,18 @@ To introduce deep learning fundamentals and major algorithms, the problem settin
 
 ## 🔬 Practicals
 
-- Implement MLP using NumPy/TensorFlow
+- Implement MLP using NumPy/PyTorch
 - Autoencoder on MNIST
- - CNN on CIFAR-10
- - RNN Text Generation
- - GAN Image Generation
+- CNN on CIFAR-10
+- RNN/LSTM for Text Generation
+- GAN for Synthetic Image Generation
+
+Each notebook includes:
+- Objective
+- Theory explanation
+- Code implementation
+- Output visualization
+- Summary
 
 ## 🧾 Assignments
 
@@ -68,16 +75,32 @@ Unit-wise assignments with theory + hands-on tasks are available in `assignments
 - Unit 5 — Generative Models & GANs → `assignments/unit5.md`
 
 Expected outputs for each practical are summarized under `practicals/outputs/`.
-- CNN on CIFAR-10
-- RNN/LSTM for Text Generation
-- GAN for Synthetic Image Generation
 
-Each notebook includes:
-- Objective
-- Theory Explanation
-- Code Implementation
-- Output Visualization
-- Summary
+## ✨ Features
+
+- Responsive React UI (Vite + Tailwind) with subtle 3D effects and gradients
+- Light/Dark theme toggle with localStorage persistence
+- Clean navigation: Syllabus, Practicals, Assignments
+- Jupyter notebooks with runnable PyTorch examples for P1–P5
+- CI pipeline (build) and GitHub Pages deploy via Actions
+- SPA routing fallback (`404.html`) for GitHub Pages
+- Unit-wise assignments and expected outputs for quick evaluation
+
+## 🗂️ Repository structure (high-level)
+
+```
+deep-learning-5th-sem-rgpv/
+├─ assignments/            # Unit-wise assignment sheets
+├─ notes/                  # Unit notes (theory + labs)
+├─ practicals/             # Jupyter notebooks + outputs summaries
+├─ datasets/               # Dataset pointers/instructions
+├─ syllabus/               # Official syllabus and summaries
+├─ ui/                     # React + Vite + Tailwind front-end
+├─ .github/workflows/      # CI and Pages deploy
+├─ assets/                 # Banner and static assets
+├─ requirements.txt        # Python dependencies
+└─ README.md               # This file
+```
 
 ## 🧠 Developer Details
 
@@ -121,8 +144,8 @@ For queries, collaborations, or club events:
 
 ## 🧰 Tools & Tech
 
-- Python 3.10+
-- TensorFlow 2.x, PyTorch
+- Python 3.10+ (developed and tested with modern Python; PyTorch preferred)
+- PyTorch (primary), TensorFlow (optional if environment supports)
 - Matplotlib, NumPy, Pandas
 - React + TypeScript + TailwindCSS + Vite
 - VS Code / Jupyter Notebook
@@ -193,11 +216,30 @@ Contains sample dataset download instructions for MNIST, CIFAR-10, and IMDB.
 
 ## 💻 UI DETAILS
 
-- `Navbar.tsx`: Simple navbar with links (Syllabus, Practicals)
+- `Navbar.tsx`: Navbar with links (Syllabus, Practicals, Assignments) + theme toggle
 - `SyllabusView.tsx`: Displays syllabus in card format
 - `PracticalsView.tsx`: Shows notebook links
+- `AssignmentsView.tsx`: Unit-wise assignment cards
 
 Academic theme with RGPV and AI&ML branding at top.
+
+## 🚀 Deployment (GitHub Pages)
+
+This repo ships with a Pages workflow. One-time setup required:
+
+1) In GitHub → Settings → Pages → Build and deployment → set Source to “GitHub Actions”.
+2) Re-run the latest "Deploy UI to GitHub Pages" workflow or push a new commit.
+
+Details: see `docs/DEPLOY_PAGES.md`.
+
+## 🔗 Quick links
+
+- Live site: https://umeshcode1.github.io/deep-learning-5th-sem-rgpv/
+- Setup guide: `SETUP_GUIDE.md`
+- Features: `docs/FEATURES.md`
+- Deploy to Pages: `docs/DEPLOY_PAGES.md`
+- Quick start: `QUICK_START.md`
+- Status & notes: `STATUS.md`
 
 ## ⚙️ Additional Files
 
