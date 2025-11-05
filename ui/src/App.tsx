@@ -85,7 +85,7 @@ function AppContent(){
         <AnnouncementBanner />
         <Navbar />
         <Hero />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24" role="main">
         <Suspense fallback={<ComponentLoader />}>
           <DeveloperInfo />
         </Suspense>
@@ -149,7 +149,7 @@ function AppContent(){
                 <li><a href="#practicals" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💻</span> Practicals</a></li>
                 <li><a href="#assignments" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📝</span> Assignments</a></li>
                 <li><a href="#code-examples" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💡</span> Code Examples</a></li>
-                <li><a href="#developer" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">�‍💻</span> About Developer</a></li>
+                <li><a href="#developer" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">👨‍💻</span> About Developer</a></li>
               </ul>
             </div>
             

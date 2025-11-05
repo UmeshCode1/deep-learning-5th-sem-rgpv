@@ -103,7 +103,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="relative overflow-hidden perspective-2000 min-h-screen flex items-center">
+    <div id="hero" className="relative overflow-hidden perspective-2000 min-h-screen flex items-center">
       {/* Particle canvas */}
       <canvas 
         ref={canvasRef}

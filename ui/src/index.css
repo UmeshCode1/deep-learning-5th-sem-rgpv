@@ -95,6 +95,48 @@ html {
   -webkit-transform: translateZ(0);
 }
 
+/* Skip link styles (visible on focus) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 16px;
+  background: #111827; /* gray-900 */
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 12px;
+  outline: 3px solid #6366f1; /* indigo-500 */
+  outline-offset: 2px;
+}
+
+/* Improve focus visibility across interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #8b5cf6; /* violet-500 */
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Provide scroll offset for sticky navbar */
+#hero,
+#developer,
+#syllabus,
+#practicals,
+#assignments,
+#code-examples,
+#learning-timeline,
+#main-content {
+  scroll-margin-top: 96px; /* 6rem to clear sticky nav */
+}
+
 /* Root container optimizations */
 #root {
   /* Contain paint and layout for better performance */

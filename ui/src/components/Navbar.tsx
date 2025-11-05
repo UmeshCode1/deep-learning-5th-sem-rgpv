@@ -44,7 +44,7 @@ export default function Navbar(){
   }, [])
   
   return (
-  <nav className={`sticky top-[env(safe-area-inset-top)] z-50 navbar-blur border-b backdrop-blur-2xl transition-all duration-500 ${
+  <nav aria-label="Primary" className={`sticky top-[env(safe-area-inset-top)] z-50 navbar-blur border-b backdrop-blur-2xl transition-all duration-500 ${
       scrolled 
         ? 'shadow-2xl shadow-indigo-500/30 dark:shadow-purple-500/30 py-2 sm:py-3 border-indigo-500/30 dark:border-purple-500/30 bg-white/80 dark:bg-slate-900/80' 
         : 'py-3 sm:py-4 border-indigo-500/20 dark:border-purple-500/20 bg-white/60 dark:bg-slate-900/60'
@@ -152,6 +152,7 @@ function NavLink({href, icon, label, activeSection}: {href: string, icon: string
   return (
     <a 
       href={href} 
+      aria-current={isActive ? 'page' : undefined}
       className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl glass-dark border transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover-lift group overflow-hidden ${
         isActive 
           ? 'border-purple-500/60 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-white shadow-lg shadow-purple-500/30' 
