@@ -16,22 +16,22 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="light"] {
-  @apply bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 text-gray-900;
+  @apply bg-gradient-to-br from-indigo-50 via-sky-50 to-cyan-50 text-gray-900;
 }
 
 /* Theme variables - Enhanced for Perfect Visibility */
 [data-theme="light"] {
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-glass: rgba(255, 255, 255, 0.92);
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-accent: #7c3aed;
-  --border-color: rgba(124, 58, 237, 0.3);
-  --shadow-color: rgba(124, 58, 237, 0.18);
-  --glow-color: rgba(124, 58, 237, 0.5);
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --overlay: rgba(0, 0, 0, 0.6);
+  --bg-secondary: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-accent: #6366f1;
+  --border-color: rgba(99, 102, 241, 0.4);
+  --shadow-color: rgba(99, 102, 241, 0.25);
+  --glow-color: rgba(99, 102, 241, 0.6);
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --overlay: rgba(0, 0, 0, 0.65);
 }
 
 [data-theme="dark"] {
@@ -200,9 +200,9 @@ html {
 }
 
 [data-theme="light"] .glass {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(147, 51, 234, 0.15);
-  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
 }
 
 .glass-dark {
@@ -216,9 +216,9 @@ html {
 }
 
 [data-theme="light"] .glass-dark {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(147, 51, 234, 0.2);
-  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.18);
 }
 
 /* Shimmer effect */
@@ -356,9 +356,9 @@ html {
 }
 
 [data-theme="light"] .navbar-blur {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 /* Particle effect */
