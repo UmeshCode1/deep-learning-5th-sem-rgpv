@@ -91,49 +91,47 @@ export default function Hero(){
       {/* Hero content */}
       <div className="relative max-w-7xl mx-auto px-4 py-24 text-center" style={{ zIndex: 2 }}>
         <div className="animate-fade-in">
-          {/* Main title with enhanced effects */}
-          <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-6 animate-gradient animate-pulse-glow">
+          {/* Main title with modern typography */}
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-8 animate-gradient animate-pulse-glow tracking-tighter leading-none drop-shadow-2xl">
             Deep Learning
           </h1>
           
-          {/* Course code badge */}
-          <div className="inline-block mb-4 animate-slide-in-bottom stagger-1">
-            <div className="glass-dark px-8 py-4 rounded-2xl border-2 border-purple-500/30 hover-lift">
-              <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">AL 503(B)</div>
-              <div className="text-sm text-purple-600 dark:text-purple-300">Course Code</div>
+          {/* Course code badge with modern design */}
+          <div className="inline-block mb-6 animate-slide-in-bottom stagger-1">
+            <div className="glass-modern px-10 py-5 rounded-2xl gradient-border hover-lift neon-glow shadow-2xl">
+              <div className="text-5xl font-black text-slate-900 dark:text-white mb-2 tracking-tight">AL 503(B)</div>
+              <div className="text-sm font-bold text-purple-600 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
             </div>
           </div>
 
-          {/* University info */}
+          {/* University info with enhanced styling */}
           <div className="text-2xl text-purple-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-2">
-            <span className="inline-block px-6 py-2 glass-dark rounded-full border border-purple-500/20">
+            <span className="inline-block px-8 py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
               🎓 RGPV Bhopal | 5th Semester
             </span>
           </div>
           
-          {/* Developer card with enhanced styling */}
+          {/* Developer card with modern design */}
           <div className="inline-block mb-12 animate-slide-in-bottom stagger-3">
-            <div className="gradient-border hover-lift group cursor-pointer">
-              <div className="gradient-border-content px-12 py-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-3xl animate-pulse-glow">
-                    👨‍💻
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white font-bold text-2xl group-hover:text-purple-300 transition-colors">Umesh Patel</p>
-                    <p className="text-purple-300 text-sm">AI & Machine Learning Enthusiast</p>
-                  </div>
+            <div className="glass-modern px-12 py-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group cursor-pointer shadow-2xl">
+              <div className="flex items-center gap-5">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 rounded-2xl flex items-center justify-center text-4xl group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                  👨‍💻
+                </div>
+                <div className="text-left">
+                  <p className="text-slate-900 dark:text-white font-black text-3xl group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
+                  <p className="text-purple-600 dark:text-purple-300 text-base font-semibold">AI & Machine Learning Enthusiast</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Quote with improved styling */}
+          {/* Quote with modern card design */}
           <div className="max-w-3xl mx-auto animate-slide-in-bottom stagger-4">
-            <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 hover-lift">
-              <div className="flex items-start gap-4">
-                <span className="text-4xl">💡</span>
-                <p className="text-slate-700 dark:text-gray-300 text-lg italic leading-relaxed text-left">
+            <div className="glass-modern p-8 rounded-3xl border border-purple-500/30 dark:border-purple-400/30 modern-card shadow-2xl">
+              <div className="flex items-start gap-5">
+                <span className="text-5xl float-smooth">💡</span>
+                <p className="text-slate-700 dark:text-gray-300 text-xl italic leading-relaxed text-left font-medium">
                   "This repository is part of the official coursework for Deep Learning (AL503B) 
                   under RGPV, Bhopal, following the AICTE Flexible Curriculum"
                 </p>
@@ -141,8 +139,8 @@ export default function Hero(){
             </div>
           </div>
 
-          {/* Quick stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-16 animate-slide-in-bottom stagger-5">
+          {/* Quick stats with modern cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-16 animate-slide-in-bottom stagger-5">
             <StatBadge icon="📚" value="5" label="Units" />
             <StatBadge icon="💻" value="5" label="Practicals" />
             <StatBadge icon="📝" value="5" label="Assignments" />
@@ -165,10 +163,10 @@ export default function Hero(){
 
 function StatBadge({icon, value, label}: {icon: string, value: string, label: string}) {
   return (
-    <div className="glass-dark p-4 rounded-xl border border-purple-500/20 hover-lift group">
-      <div className="text-3xl mb-2 group-hover:scale-125 transition-transform">{icon}</div>
-      <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">{value}</div>
-      <div className="text-sm text-purple-600 dark:text-purple-300">{label}</div>
+    <div className="glass-modern p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group shadow-xl">
+      <div className="text-5xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-smooth">{icon}</div>
+      <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mb-2">{value}</div>
+      <div className="text-sm font-bold text-purple-600 dark:text-purple-300 uppercase tracking-widest">{label}</div>
     </div>
   )
 }
