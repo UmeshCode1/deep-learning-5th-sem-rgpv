@@ -61,20 +61,21 @@ export default function Navbar(){
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className={`relative w-16 h-8 rounded-full p-1 transition-all duration-500 hover:scale-110 group ml-4 overflow-hidden shadow-lg ${
+              className={`relative w-16 h-8 rounded-full p-1 transition-all duration-500 hover:scale-110 active:scale-95 group ml-4 overflow-hidden ${
                 theme === 'dark' 
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-purple-500/50' 
-                  : 'bg-gradient-to-r from-indigo-500 to-sky-500 hover:shadow-indigo-500/50 border-2 border-indigo-600/30'
+                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50' 
+                  : 'bg-gradient-to-r from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/40 hover:shadow-indigo-500/60 border-2 border-indigo-600/40'
               }`}
               aria-label="Toggle theme"
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer"></div>
-              <div className={`absolute w-6 h-6 rounded-full shadow-lg transform transition-all duration-500 flex items-center justify-center ${
+              <div className={`absolute w-6 h-6 rounded-full shadow-xl transform transition-all duration-500 ease-out flex items-center justify-center ${
                 theme === 'dark' 
-                  ? 'bg-white translate-x-0' 
-                  : 'bg-gradient-to-br from-amber-300 to-yellow-400 translate-x-8 border-2 border-yellow-500/50'
+                  ? 'bg-white translate-x-0 shadow-purple-400/50' 
+                  : 'bg-gradient-to-br from-amber-300 to-yellow-400 translate-x-8 border-2 border-yellow-500/60 shadow-yellow-500/50'
               }`}>
-                <span className="text-sm group-hover:scale-125 group-hover:rotate-180 transition-all duration-500">
+                <span className="text-sm group-hover:scale-125 group-hover:rotate-180 group-active:scale-90 transition-all duration-500">
                   {theme === 'dark' ? '🌙' : '☀️'}
                 </span>
               </div>
@@ -111,14 +112,15 @@ export default function Navbar(){
                     toggleTheme()
                     setMobileMenuOpen(false)
                   }}
-                  className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border hover-lift transition-all ${
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-lg border hover-lift active:scale-95 transition-all duration-300 ${
                     theme === 'dark'
-                      ? 'glass-dark border-purple-500/20 text-white'
-                      : 'bg-gradient-to-r from-indigo-500 to-sky-500 border-indigo-600/30 text-white shadow-lg'
+                      ? 'glass-dark border-purple-500/20 text-white hover:border-purple-500/40'
+                      : 'bg-gradient-to-r from-indigo-500 to-sky-500 border-indigo-600/40 text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50'
                   }`}
+                  title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                 >
-                  <span className="font-medium">Theme</span>
-                  <span className="text-2xl">{theme === 'dark' ? '🌙' : '☀️'}</span>
+                  <span className="font-semibold">Switch Theme</span>
+                  <span className="text-2xl transition-transform hover:scale-125 hover:rotate-12">{theme === 'dark' ? '🌙' : '☀️'}</span>
                 </button>
               </div>
             </div>

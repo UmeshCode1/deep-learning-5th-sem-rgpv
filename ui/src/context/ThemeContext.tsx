@@ -17,7 +17,23 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     localStorage.setItem('theme', theme)
-    document.documentElement.setAttribute('data-theme', theme)
+    const root = document.documentElement
+    const body = document.body
+    
+    // Add visual feedback during theme change
+    body.classList.add('theme-switching')
+    
+    // Add smooth transition
+    root.style.transition = 'background-color 0.3s ease, color 0.3s ease'
+    root.setAttribute('data-theme', theme)
+    
+    // Remove transition and animation classes after completion
+    const timer = setTimeout(() => {
+      root.style.transition = ''
+      body.classList.remove('theme-switching')
+    }, 350)
+    
+    return () => clearTimeout(timer)
   }, [theme])
 
   const toggleTheme = () => {
