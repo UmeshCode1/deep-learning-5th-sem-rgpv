@@ -161,7 +161,7 @@ export default function PracticalsView(){
                   {p.tags.map(tag => (
                     <span 
                       key={tag}
-                      className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-xs text-purple-300"
+                      className="px-3 py-1 bg-indigo-100 dark:bg-purple-500/20 border border-indigo-400 dark:border-purple-500/30 rounded-full text-xs text-indigo-800 dark:text-purple-300 font-semibold"
                     >
                       {tag}
                     </span>
@@ -186,12 +186,12 @@ export default function PracticalsView(){
 
 function StatCard({icon, value, label, color}: {icon: string, value: string, label: string, color: string}){
   return (
-    <div className="bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 text-center transform hover:scale-110 hover:-translate-y-4 transition-all duration-500 hover:shadow-3d-purple card-3d group">
+    <div className="bg-white/90 dark:bg-slate-800/50 backdrop-blur-xl rounded-2xl p-8 border border-indigo-500/30 dark:border-purple-500/20 text-center transform hover:scale-110 hover:-translate-y-4 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-500/20 dark:hover:shadow-purple-500/20 card-3d group">
       <div className="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">{icon}</div>
       <div className={`text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${color} mb-3`}>
         {value}
       </div>
-      <div className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-lg">{label}</div>
+      <div className="text-slate-800 dark:text-gray-400 text-lg font-semibold">{label}</div>
     </div>
   )
 }

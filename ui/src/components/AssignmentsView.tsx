@@ -107,7 +107,7 @@ export default function AssignmentsView(){
                 {/* Topics tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {u.topics.map(topic => (
-                    <span key={topic} className="px-2 py-1 bg-purple-500/20 dark:bg-purple-500/20 border border-purple-500/30 dark:border-purple-400/30 rounded text-xs text-purple-700 dark:text-purple-300">
+                    <span key={topic} className="px-2 py-1 bg-indigo-100 dark:bg-purple-500/20 border border-indigo-400 dark:border-purple-400/30 rounded text-xs text-indigo-800 dark:text-purple-300 font-semibold">
                       {topic}
                     </span>
                   ))}

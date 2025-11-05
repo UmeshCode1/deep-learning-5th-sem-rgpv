@@ -123,22 +123,22 @@ export default function CodePreview() {
               }}
               className={`w-full text-left p-4 rounded-xl transition-all duration-300 group ${
                 selectedSnippet === index
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-500 dark:to-pink-500 text-white shadow-xl scale-105'
-                  : 'glass-dark border border-purple-500/20 hover:border-purple-500/40 hover:scale-102'
+                  ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-pink-600 text-white shadow-xl scale-105'
+                  : 'glass-dark border border-indigo-500/30 dark:border-purple-500/20 hover:border-indigo-500/50 dark:hover:border-purple-500/40 hover:scale-102'
               }`}
             >
               <div className="flex items-center gap-3 mb-2">
                 <Code className={`w-5 h-5 ${
-                  selectedSnippet === index ? 'text-white' : 'text-purple-400'
+                  selectedSnippet === index ? 'text-white' : 'text-indigo-600 dark:text-purple-400'
                 }`} />
                 <h3 className={`font-bold ${
-                  selectedSnippet === index ? 'text-white' : 'text-slate-900 dark:text-white'
+                  selectedSnippet === index ? 'text-white' : 'text-gray-900 dark:text-white'
                 }`}>
                   {snippet.title}
                 </h3>
               </div>
-              <p className={`text-sm ${
-                selectedSnippet === index ? 'text-white/90' : 'text-slate-600 dark:text-gray-400'
+              <p className={`text-sm font-medium ${
+                selectedSnippet === index ? 'text-white/90' : 'text-slate-800 dark:text-gray-400'
               }`}>
                 {snippet.description}
               </p>
