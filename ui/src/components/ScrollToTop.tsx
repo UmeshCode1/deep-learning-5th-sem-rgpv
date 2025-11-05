@@ -77,9 +77,6 @@ export default function ScrollToTop() {
             className="text-indigo-600 dark:text-purple-400 transition-all duration-300"
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-indigo-600 dark:text-purple-400">
-          {Math.round((window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100)}%
-        </div>
       </div>
     </div>
   )

@@ -105,9 +105,6 @@ export default function LoadingScreen() {
             <p className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-gray-500">
               Loading Resources...
             </p>
-            <p className="text-sm sm:text-base font-black text-purple-600 dark:text-purple-400">
-              {progress}%
-            </p>
           </div>
         </div>
 

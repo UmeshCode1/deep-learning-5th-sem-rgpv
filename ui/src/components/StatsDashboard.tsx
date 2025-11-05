@@ -102,8 +102,8 @@ export default function StatsDashboard() {
                 />
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-4xl font-black text-white">{completionPercentage}%</span>
-                <span className="text-xs text-white/80 font-medium">Complete</span>
+             <span className="text-4xl font-black text-white">{stats.completedTopics}/{stats.totalTopics}</span>
+             <span className="text-xs text-white/80 font-medium">Topics Complete</span>
               </div>
             </div>
           </div>

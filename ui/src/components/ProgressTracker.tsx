@@ -117,7 +117,6 @@ export default function ProgressTracker() {
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-white/90">
               <span>{completedItems} of {totalItems} completed</span>
-              <span className="font-bold">{completionPercentage}%</span>
             </div>
             <div className="h-3 bg-white/20 rounded-full overflow-hidden">
               <div 

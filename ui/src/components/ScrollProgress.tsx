@@ -77,13 +77,6 @@ export default function ScrollProgress() {
             </defs>
           </svg>
           
-          {/* Center percentage */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-black text-indigo-600 dark:text-purple-400">
-              {Math.round(scrollProgress)}%
-            </span>
-          </div>
-          
           {/* Glow effect */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 opacity-20 blur-lg animate-pulse"></div>
         </div>
