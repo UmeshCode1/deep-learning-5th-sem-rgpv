@@ -129,7 +129,7 @@ export default function Hero() {
           {/* Course code badge with modern design */}
           <div className="inline-block mb-6 animate-slide-in-bottom stagger-1">
             <div className="glass-modern px-10 py-5 rounded-2xl gradient-border hover-lift neon-glow shadow-2xl">
-              <div className="text-5xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">AL 503(B)</div>
+              <div className="text-5xl font-black text-black dark:text-white mb-2 tracking-tight">AL 503(B)</div>
               <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Hero() {
             <div className="glass-modern px-8 py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
-                <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white min-h-[32px]">
+                <p className="text-xl md:text-2xl font-bold text-black dark:text-white min-h-[32px]">
                   {typedText}
                   <span className="animate-pulse">|</span>
                 </p>
@@ -162,7 +162,7 @@ export default function Hero() {
                   👨‍💻
                 </div>
                 <div className="text-left">
-                  <p className="text-gray-900 dark:text-white font-black text-3xl group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
+                  <p className="text-black dark:text-white font-black text-3xl group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
                   <p className="text-indigo-700 dark:text-purple-300 text-base font-bold">AI & Machine Learning Enthusiast</p>
                 </div>
               </div>

@@ -49,9 +49,7 @@ export default function SyllabusView(){
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
-                  {u.title}
-                </h3>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-4 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">{u.title}</h3>
                 
                 <a 
                   href={`../syllabus/deep_learning_syllabus.md`}

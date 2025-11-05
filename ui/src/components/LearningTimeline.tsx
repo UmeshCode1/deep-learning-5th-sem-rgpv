@@ -149,7 +149,7 @@ export default function LearningTimeline() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-2xl font-black text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-black text-black dark:text-white mb-2 sm:mb-3 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
                     {item.title}
                   </h3>
 

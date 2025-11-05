@@ -71,7 +71,7 @@ function InfoCard({icon, label, value}: {icon: string, label: string, value: str
       <span className="text-2xl sm:text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
       <div>
         <div className="text-sm text-indigo-700 dark:text-gray-400 mb-1 font-bold uppercase tracking-wide">{label}</div>
-        <div className="text-gray-900 dark:text-white font-bold text-base">{value}</div>
+        <div className="text-black dark:text-white font-bold text-base">{value}</div>
       </div>
     </div>
   )

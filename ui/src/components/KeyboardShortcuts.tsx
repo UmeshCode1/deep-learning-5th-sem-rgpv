@@ -180,7 +180,7 @@ export default function KeyboardShortcuts() {
                         key={index}
                         className="flex items-center justify-between p-3 glass-modern rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all group"
                       >
-                        <span className="text-gray-900 dark:text-white font-semibold group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
+                        <span className="text-black dark:text-white font-semibold group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
                           {shortcut.description}
                         </span>
                         <div className="flex gap-2">
@@ -205,7 +205,7 @@ export default function KeyboardShortcuts() {
             {filteredShortcuts.length === 0 && (
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">No shortcuts found</h3>
+                <h3 className="text-xl font-bold text-black dark:text-white mb-2">No shortcuts found</h3>
                 <p className="text-slate-800 dark:text-gray-400 font-medium">Try a different search term</p>
               </div>
             )}

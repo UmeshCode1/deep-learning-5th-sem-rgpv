@@ -132,7 +132,7 @@ export default function CodePreview() {
                   selectedSnippet === index ? 'text-white' : 'text-indigo-700 dark:text-purple-400'
                 }`} />
                 <h3 className={`font-bold text-base sm:text-lg ${
-                  selectedSnippet === index ? 'text-white' : 'text-gray-900 dark:text-white'
+                  selectedSnippet === index ? 'text-white' : 'text-black dark:text-white'
                 }`}>
                   {snippet.title}
                 </h3>

@@ -136,11 +136,11 @@ export default function PracticalsView(){
                         <span className={`px-4 py-2 bg-gradient-to-r ${p.color} rounded-xl text-white text-base font-bold shadow-lg transform group-hover:scale-110 transition-transform`}>
                           {p.id}
                         </span>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-black dark:text-white group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
                           {p.title}
                         </h3>
                       </div>
-                      <p className="text-slate-800 dark:text-gray-400 text-base font-medium group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
+                      <p className="text-slate-800 dark:text-gray-400 text-base font-medium group-hover:text-black dark:group-hover:text-gray-300 transition-colors">
                         {p.desc}
                       </p>
                     </div>
