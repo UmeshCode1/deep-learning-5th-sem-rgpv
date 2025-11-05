@@ -9,10 +9,8 @@ import AssignmentsView from './components/AssignmentsView'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import ScrollToTop from './components/ScrollToTop'
 import LoadingScreen from './components/LoadingScreen'
-import ProgressTracker from './components/ProgressTracker'
 import CodePreview from './components/CodePreview'
 import LearningTimeline from './components/LearningTimeline'
-import StatsDashboard from './components/StatsDashboard'
 import KeyboardShortcuts from './components/KeyboardShortcuts'
 import { initScrollAnimations } from './utils/scrollAnimations'
 
@@ -47,7 +45,7 @@ function AppContent(){
         <AnnouncementBanner />
         <Navbar />
         <Hero />
-      <main className="max-w-7xl mx-auto px-4 py-16 space-y-24">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24">
         <DeveloperInfo />
         <SyllabusView />
         <PracticalsView />
@@ -57,8 +55,6 @@ function AppContent(){
       </main>
       
       {/* Floating Components */}
-      <ProgressTracker />
-      <StatsDashboard />
       <KeyboardShortcuts />
       
       {/* Modern Footer */}

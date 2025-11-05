@@ -95,7 +95,7 @@ export default function CodePreview() {
   const currentSnippet = codeSnippets[selectedSnippet]
 
   return (
-    <section className="scroll-mt-20 perspective-2000">
+    <section id="code-examples" className="scroll-mt-20 perspective-2000">
       {/* Section Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-4 mb-4">
@@ -111,9 +111,9 @@ export default function CodePreview() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Snippet Selector */}
-        <div className="lg:col-span-1 space-y-3">
+        <div className="lg:col-span-1 space-y-2 sm:space-y-3">
           {codeSnippets.map((snippet, index) => (
             <button
               key={index}
@@ -150,35 +150,36 @@ export default function CodePreview() {
         <div className="lg:col-span-2">
           <div className="glass-dark backdrop-blur-xl rounded-2xl border border-purple-500/30 overflow-hidden shadow-2xl">
             {/* Header */}
-            <div className="bg-slate-900/80 px-6 py-4 border-b border-purple-500/20 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <div className="bg-slate-900/80 px-3 sm:px-6 py-3 sm:py-4 border-b border-purple-500/20 flex items-center justify-between flex-wrap gap-2">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="flex gap-1.5 sm:gap-2">
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500"></div>
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
                 </div>
-                <span className="text-sm font-mono text-gray-400">
+                <span className="text-xs sm:text-sm font-mono text-gray-400">
                   {currentSnippet.language}
                 </span>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex gap-1.5 sm:gap-2">
                 {currentSnippet.output && (
                   <button
                     onClick={() => setShowOutput(!showOutput)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                       showOutput
                         ? 'bg-green-500/20 text-green-300 border border-green-500/30'
                         : 'bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:bg-purple-500/30'
                     }`}
                   >
-                    <Play className="w-4 h-4" />
-                    {showOutput ? 'Show Code' : 'Run'}
+                    <Play className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">{showOutput ? 'Show Code' : 'Run'}</span>
+                    <span className="sm:hidden">{showOutput ? 'Code' : 'Run'}</span>
                   </button>
                 )}
                 <button
                   onClick={() => copyToClipboard(currentSnippet.code, selectedSnippet)}
-                  className="flex items-center gap-2 px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-lg text-sm font-medium transition-all border border-purple-500/30"
+                  className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-lg text-xs sm:text-sm font-medium transition-all border border-purple-500/30"
                 >
                   {copiedIndex === selectedSnippet ? (
                     <>
@@ -198,15 +199,15 @@ export default function CodePreview() {
             {/* Code/Output Area */}
             <div className="relative">
               {!showOutput ? (
-                <div className="p-6 overflow-x-auto">
-                  <pre className="text-sm leading-relaxed">
+                <div className="p-3 sm:p-6 overflow-x-auto">
+                  <pre className="text-xs sm:text-sm leading-relaxed">
                     <code className="text-gray-300 font-mono">
                       {currentSnippet.code}
                     </code>
                   </pre>
                 </div>
               ) : (
-                <div className="p-6 bg-slate-950/50">
+                <div className="p-3 sm:p-6 bg-slate-950/50">
                   <div className="flex items-start gap-3">
                     <div className="text-green-400 font-mono text-sm">{'>>>'}</div>
                     <div className="flex-1">
@@ -223,18 +224,18 @@ export default function CodePreview() {
             </div>
 
             {/* Footer Info */}
-            <div className="bg-slate-900/80 px-6 py-3 border-t border-purple-500/20 flex items-center justify-between text-sm">
+            <div className="bg-slate-900/80 px-3 sm:px-6 py-2 sm:py-3 border-t border-purple-500/20 flex items-center justify-between text-xs sm:text-sm">
               <div className="text-gray-400">
                 Lines: {currentSnippet.code.split('\n').length}
               </div>
               <div className="text-gray-400">
-                Snippet {selectedSnippet + 1} of {codeSnippets.length}
+                {selectedSnippet + 1}/{codeSnippets.length}
               </div>
             </div>
           </div>
 
           {/* Navigation */}
-          <div className="flex gap-3 mt-4">
+          <div className="flex gap-2 sm:gap-3 mt-3 sm:mt-4">
             <button
               onClick={() => setSelectedSnippet(Math.max(0, selectedSnippet - 1))}
               disabled={selectedSnippet === 0}

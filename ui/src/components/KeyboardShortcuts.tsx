@@ -20,12 +20,11 @@ const shortcuts: Shortcut[] = [
   { keys: ['2'], description: 'Go to Syllabus', category: 'Sections' },
   { keys: ['3'], description: 'Go to Practicals', category: 'Sections' },
   { keys: ['4'], description: 'Go to Assignments', category: 'Sections' },
-  { keys: ['5'], description: 'Go to Timeline', category: 'Sections' },
+  { keys: ['5'], description: 'Go to Code Examples', category: 'Sections' },
+  { keys: ['6'], description: 'Go to Learning Timeline', category: 'Sections' },
   
   // Actions
   { keys: ['T'], description: 'Toggle theme', category: 'Actions' },
-  { keys: ['P'], description: 'Toggle progress tracker', category: 'Actions' },
-  { keys: ['S'], description: 'Toggle statistics', category: 'Actions' },
   { keys: ['?'], description: 'Show this help', category: 'Actions' },
   { keys: ['Esc'], description: 'Close modal', category: 'Actions' },
 ]
@@ -57,11 +56,20 @@ export default function KeyboardShortcuts() {
 
       // Number keys for navigation (when not in input)
       if (!isOpen && e.target instanceof HTMLElement && e.target.tagName !== 'INPUT') {
-        const sections = ['developer', 'syllabus', 'practicals', 'assignments']
         const num = parseInt(e.key)
-        if (num >= 1 && num <= 4) {
+        if (num >= 1 && num <= 6) {
           e.preventDefault()
-          const section = document.getElementById(sections[num - 1])
+          // Map numbers to section IDs or scroll positions
+          const sectionMap: { [key: number]: string } = {
+            1: 'developer',
+            2: 'syllabus',
+            3: 'practicals',
+            4: 'assignments',
+            5: 'code-examples',
+            6: 'learning-timeline'
+          }
+          const sectionId = sectionMap[num]
+          const section = document.querySelector(`#${sectionId}, section:nth-of-type(${num + 1})`)
           section?.scrollIntoView({ behavior: 'smooth' })
         }
       }
@@ -89,11 +97,11 @@ export default function KeyboardShortcuts() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-8 left-8 z-40 p-4 bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-500 dark:to-purple-500 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 neon-glow group"
+        className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-40 p-3 sm:p-4 bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-500 dark:to-purple-500 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 neon-glow group"
         aria-label="Show keyboard shortcuts"
         title="Press ? for shortcuts"
       >
-        <Keyboard className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+        <Keyboard className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform" />
       </button>
     )
   }
@@ -107,34 +115,34 @@ export default function KeyboardShortcuts() {
       />
 
       {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
         <div 
-          className="glass-dark backdrop-blur-xl rounded-2xl border border-purple-500/30 shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden animate-scale-in"
+          className="glass-dark backdrop-blur-xl rounded-xl sm:rounded-2xl border border-purple-500/30 shadow-2xl max-w-3xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-hidden animate-scale-in"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-500 dark:to-purple-500 p-6">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-white/20 rounded-xl">
-                  <Keyboard className="w-6 h-6 text-white" />
+          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-500 dark:to-purple-500 p-4 sm:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="p-2 sm:p-3 bg-white/20 rounded-lg sm:rounded-xl">
+                  <Keyboard className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black text-white">Keyboard Shortcuts</h2>
-                  <p className="text-white/80 text-sm">Master these shortcuts for faster navigation</p>
+                  <h2 className="text-lg sm:text-2xl font-black text-white">Keyboard Shortcuts</h2>
+                  <p className="text-white/80 text-xs sm:text-sm hidden sm:block">Master these shortcuts for faster navigation</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-white/20 rounded-lg transition-colors text-white"
+                className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors text-white"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
 
             {/* Search */}
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60" />
+              <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
               <input
                 type="text"
                 placeholder="Search shortcuts..."

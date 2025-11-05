@@ -97,7 +97,7 @@ const timelineData: TimelineItem[] = [
 
 export default function LearningTimeline() {
   return (
-    <section className="scroll-mt-20 perspective-2000">
+    <section id="learning-timeline" className="scroll-mt-20 perspective-2000">
       {/* Section Header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-4 mb-4">
@@ -114,42 +114,42 @@ export default function LearningTimeline() {
       </div>
 
       {/* Timeline */}
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-5xl mx-auto px-2 sm:px-0">
         {/* Vertical Line */}
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 via-blue-600 to-green-600 dark:from-purple-500 dark:via-blue-500 dark:to-green-500 opacity-30"></div>
+        <div className="absolute left-6 sm:left-8 md:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-purple-600 via-blue-600 to-green-600 dark:from-purple-500 dark:via-blue-500 dark:to-green-500 opacity-30"></div>
 
         {/* Timeline Items */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {timelineData.map((item, index) => (
             <div 
               key={item.id}
-              className={`relative flex items-center gap-8 ${
+              className={`relative flex items-center gap-4 sm:gap-8 ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               } animate-fade-in`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Timeline Node */}
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 z-10">
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl border-4 border-slate-900 dark:border-slate-900 animate-pulse-glow`}>
-                  <div className="text-white">
+              <div className="absolute left-6 sm:left-8 md:left-1/2 -translate-x-1/2 z-10">
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl border-2 sm:border-4 border-slate-900 dark:border-slate-900 animate-pulse-glow`}>
+                  <div className="text-white text-sm sm:text-base">
                     {item.icon}
                   </div>
                 </div>
               </div>
 
               {/* Content Card */}
-              <div className={`flex-1 ml-24 md:ml-0 ${
-                index % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'
-              } md:w-[calc(50%-4rem)]`}>
-                <div className="glass-dark backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30 shadow-2xl hover:scale-105 transition-all duration-500 card-3d group">
+              <div className={`flex-1 ml-16 sm:ml-24 md:ml-0 ${
+                index % 2 === 0 ? 'md:mr-auto md:pr-8 lg:pr-16' : 'md:ml-auto md:pl-8 lg:pl-16'
+              } md:w-[calc(50%-3rem)] lg:w-[calc(50%-4rem)]`}>
+                <div className="glass-dark backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-purple-500/30 shadow-2xl hover:scale-105 transition-all duration-500 card-3d group">
                   {/* Week Badge */}
-                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${item.color} text-white text-sm font-bold mb-4 shadow-lg`}>
+                  <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${item.color} text-white text-xs sm:text-sm font-bold mb-3 sm:mb-4 shadow-lg`}>
                     <span>📅</span>
                     {item.week}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-black text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                     {item.title}
                   </h3>
 
