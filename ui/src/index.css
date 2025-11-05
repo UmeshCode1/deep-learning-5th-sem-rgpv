@@ -8,7 +8,12 @@
 body { 
   @apply transition-all duration-300 ease-in-out;
   overflow-x: hidden;
+  overflow-y: scroll; /* Force scrollbar to prevent layout shift */
   min-height: 100vh;
+  /* Prevent scroll jank */
+  overscroll-behavior-y: none;
+  /* Smooth scrolling on all browsers */
+  scroll-behavior: smooth;
 }
 
 body[data-theme="dark"] {
@@ -71,8 +76,6 @@ body[data-theme="light"] {
   transition-property: background-color, border-color, color, fill, stroke, box-shadow;
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  /* Hint browser for GPU acceleration */
-  will-change: auto;
 }
 
 /* Exclude elements that need custom transitions */
@@ -80,17 +83,43 @@ body[data-theme="light"] {
   transition-property: background-color, border-color, color, fill, stroke, box-shadow;
 }
 
-/* Smooth scroll behavior with momentum */
+/* Enhanced smooth scrolling - Fix glitches */
 html {
   scroll-behavior: smooth;
+  /* Prevent bounce effect on edges */
+  overscroll-behavior-y: none;
   /* iOS momentum scrolling */
   -webkit-overflow-scrolling: touch;
+  /* Force GPU acceleration for scroll */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
-/* Optimize scrolling performance */
+/* Root container optimizations */
+#root {
+  /* Contain paint and layout for better performance */
+  contain: layout style paint;
+  /* Prevent scroll jank */
+  isolation: isolate;
+}
+
+/* Optimize scrolling performance and reduce jank */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+/* Disable smooth scroll for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

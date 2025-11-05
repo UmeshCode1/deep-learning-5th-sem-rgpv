@@ -8,26 +8,38 @@ export default function Navbar(){
   const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-      
-      // Active section detection
-      const sections = ['hero', 'developer', 'syllabus', 'practicals', 'assignments']
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      
-      if (currentSection) {
-        setActiveSection(currentSection)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20)
+          
+          // Active section detection (throttled)
+          const sections = ['hero', 'developer', 'syllabus', 'practicals', 'assignments']
+          const currentSection = sections.find(section => {
+            const element = document.getElementById(section)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              return rect.top <= 100 && rect.bottom >= 100
+            }
+            return false
+          })
+          
+          if (currentSection) {
+            setActiveSection(currentSection)
+          }
+          
+          ticking = false
+        })
+        ticking = true
       }
     }
     
-    window.addEventListener('scroll', handleScroll)
+    // Initial call
+    handleScroll()
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   
