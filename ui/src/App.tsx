@@ -1,18 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
-import SyllabusView from './components/SyllabusView'
-import PracticalsView from './components/PracticalsView'
-import DeveloperInfo from './components/DeveloperInfo'
 import Hero from './components/Hero'
-import AssignmentsView from './components/AssignmentsView'
-import AnnouncementBanner from './components/AnnouncementBanner'
-import ScrollToTop from './components/ScrollToTop'
 import LoadingScreen from './components/LoadingScreen'
-import CodePreview from './components/CodePreview'
-import LearningTimeline from './components/LearningTimeline'
+import ScrollToTop from './components/ScrollToTop'
+import ScrollProgress from './components/ScrollProgress'
+import FloatingMenu from './components/FloatingMenu'
+import AnnouncementBanner from './components/AnnouncementBanner'
 import KeyboardShortcuts from './components/KeyboardShortcuts'
 import { initScrollAnimations } from './utils/scrollAnimations'
+import { initRevealAnimations, runWhenIdle } from './utils/performance'
+
+// Lazy load heavy components for better performance
+const DeveloperInfo = lazy(() => import('./components/DeveloperInfo'))
+const SyllabusView = lazy(() => import('./components/SyllabusView'))
+const PracticalsView = lazy(() => import('./components/PracticalsView'))
+const AssignmentsView = lazy(() => import('./components/AssignmentsView'))
+const CodePreview = lazy(() => import('./components/CodePreview'))
+const LearningTimeline = lazy(() => import('./components/LearningTimeline'))
+
+// Loading fallback component
+function ComponentLoader() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <div className="relative">
+        <div className="w-16 h-16 border-4 border-indigo-200 dark:border-purple-800 border-t-indigo-600 dark:border-t-purple-400 rounded-full animate-spin"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-2xl">🧠</span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function App(){
   return (
@@ -24,34 +43,67 @@ export default function App(){
 
 function AppContent(){
   const [isLoading, setIsLoading] = useState(true)
+  const [showContent, setShowContent] = useState(false)
 
   useEffect(() => {
-    // Simulate initial loading
+    // Optimized loading sequence
     const timer = setTimeout(() => {
       setIsLoading(false)
-      // Initialize scroll animations after loading
+      // Show content with slight delay for smooth transition
       setTimeout(() => {
-        initScrollAnimations()
-      }, 100)
+        setShowContent(true)
+        // Initialize animations when browser is idle (performance boost)
+        runWhenIdle(() => {
+          initScrollAnimations()
+          initRevealAnimations()
+        })
+      }, 300)
     }, 2000)
     
     return () => clearTimeout(timer)
   }, [])
 
+  // Performance: Disable animations during loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [isLoading])
+
   return (
     <>
       {isLoading && <LoadingScreen />}
-      <div className="min-h-screen transition-colors duration-500 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+      <div className={`min-h-screen transition-all duration-500 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Scroll Progress Indicator */}
+        <ScrollProgress />
+        
+        {/* Floating Quick Navigation Menu */}
+        <FloatingMenu />
+        
         <AnnouncementBanner />
         <Navbar />
         <Hero />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24">
-        <DeveloperInfo />
-        <SyllabusView />
-        <PracticalsView />
-        <AssignmentsView />
-        <CodePreview />
-        <LearningTimeline />
+        <Suspense fallback={<ComponentLoader />}>
+          <DeveloperInfo />
+        </Suspense>
+        <Suspense fallback={<ComponentLoader />}>
+          <SyllabusView />
+        </Suspense>
+        <Suspense fallback={<ComponentLoader />}>
+          <PracticalsView />
+        </Suspense>
+        <Suspense fallback={<ComponentLoader />}>
+          <AssignmentsView />
+        </Suspense>
+        <Suspense fallback={<ComponentLoader />}>
+          <CodePreview />
+        </Suspense>
+        <Suspense fallback={<ComponentLoader />}>
+          <LearningTimeline />
+        </Suspense>
       </main>
       
       {/* Floating Components */}

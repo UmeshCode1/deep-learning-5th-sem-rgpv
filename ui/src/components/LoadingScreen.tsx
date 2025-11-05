@@ -3,19 +3,38 @@ import React, { useEffect, useState } from 'react'
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
+  const [loadingStage, setLoadingStage] = useState('Initializing...')
 
   useEffect(() => {
-    // Simulate loading progress
+    const stages = [
+      { progress: 20, text: 'Loading Neural Networks...' },
+      { progress: 40, text: 'Preparing Practicals...' },
+      { progress: 60, text: 'Loading Assignments...' },
+      { progress: 80, text: 'Setting up Resources...' },
+      { progress: 100, text: 'Almost Ready!' }
+    ]
+    
+    let stageIndex = 0
+    
+    // Simulate loading progress with stages
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
+        const nextProgress = prev + 5
+        
+        // Update loading stage text
+        if (stageIndex < stages.length && nextProgress >= stages[stageIndex].progress) {
+          setLoadingStage(stages[stageIndex].text)
+          stageIndex++
+        }
+        
+        if (nextProgress >= 100) {
           clearInterval(interval)
-          setTimeout(() => setIsVisible(false), 500)
+          setTimeout(() => setIsVisible(false), 800)
           return 100
         }
-        return prev + 10
+        return nextProgress
       })
-    }, 150)
+    }, 80)
 
     return () => clearInterval(interval)
   }, [])
@@ -51,32 +70,63 @@ export default function LoadingScreen() {
           </svg>
         </div>
 
-        {/* Loading Text */}
+        {/* Loading Text with Stage */}
         <div className="space-y-4">
-          <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
+          <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
             Deep Learning Hub
           </h2>
-          <p className="text-lg font-bold text-slate-900 dark:text-gray-400">
-            Loading AI-Powered Learning Platform...
-          </p>
+          <div className="space-y-2">
+            <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-gray-400">
+              AI-Powered Learning Platform
+            </p>
+            <p className="text-sm font-semibold text-indigo-600 dark:text-purple-400 animate-pulse">
+              {loadingStage}
+            </p>
+          </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="w-80 mx-auto space-y-2">
-          <div className="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+        {/* Enhanced Progress Bar */}
+        <div className="w-72 sm:w-80 mx-auto space-y-3">
+          <div className="relative h-3 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
             <div 
-              className="h-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 transition-all duration-300 ease-out rounded-full"
+              className="h-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 transition-all duration-300 ease-out rounded-full relative overflow-hidden"
+              style={{ width: `${progress}%` }}
+            >
+              {/* Shimmer effect on progress bar */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+            </div>
+            {/* Glow effect */}
+            <div 
+              className="absolute top-0 left-0 h-full bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-full blur-lg opacity-50 transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-sm font-bold text-purple-600 dark:text-purple-400 text-right">
-            {progress}%
-          </p>
+          <div className="flex justify-between items-center">
+            <p className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-gray-500">
+              Loading Resources...
+            </p>
+            <p className="text-sm sm:text-base font-black text-purple-600 dark:text-purple-400">
+              {progress}%
+            </p>
+          </div>
         </div>
 
-        {/* Brain Icon */}
-        <div className="text-6xl animate-bounce">
-          🧠
+        {/* Animated Brain Icon with particles */}
+        <div className="relative">
+          <div className="text-5xl sm:text-6xl animate-bounce">
+            🧠
+          </div>
+          {/* Sparkle particles */}
+          {[0, 1, 2].map((i) => (
+            <div
+              key={i}
+              className="absolute top-1/2 left-1/2 w-2 h-2 bg-yellow-400 rounded-full animate-ping"
+              style={{
+                animationDelay: `${i * 0.3}s`,
+                transform: `translate(${i * 20 - 20}px, ${i * 15 - 15}px)`
+              }}
+            />
+          ))}
         </div>
       </div>
 
