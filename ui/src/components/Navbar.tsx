@@ -5,11 +5,28 @@ export default function Navbar(){
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
+      
+      // Active section detection
+      const sections = ['hero', 'developer', 'syllabus', 'practicals', 'assignments']
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
+        }
+        return false
+      })
+      
+      if (currentSection) {
+        setActiveSection(currentSection)
+      }
     }
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -36,10 +53,10 @@ export default function Navbar(){
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-2">
-            <NavLink href="#developer" icon="👨‍💻" label="Developer" />
-            <NavLink href="#syllabus" icon="📚" label="Syllabus" />
-            <NavLink href="#practicals" icon="💻" label="Practicals" />
-            <NavLink href="#assignments" icon="📄" label="Assignments" />
+            <NavLink href="#developer" icon="👨‍💻" label="Developer" activeSection={activeSection} />
+            <NavLink href="#syllabus" icon="📚" label="Syllabus" activeSection={activeSection} />
+            <NavLink href="#practicals" icon="💻" label="Practicals" activeSection={activeSection} />
+            <NavLink href="#assignments" icon="📄" label="Assignments" activeSection={activeSection} />
             
             {/* Theme Toggle */}
             <button
@@ -100,15 +117,23 @@ export default function Navbar(){
   )
 }
 
-function NavLink({href, icon, label}: {href: string, icon: string, label: string}){
+function NavLink({href, icon, label, activeSection}: {href: string, icon: string, label: string, activeSection?: string}){
+  const sectionId = href.replace('#', '')
+  const isActive = activeSection === sectionId
+  
   return (
     <a 
       href={href} 
-      className="relative flex items-center gap-2 px-5 py-2.5 rounded-xl glass-dark border border-purple-500/20 hover:border-purple-500/40 text-slate-700 dark:text-gray-300 hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover-lift group overflow-hidden"
+      className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl glass-dark border transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover-lift group overflow-hidden ${
+        isActive 
+          ? 'border-purple-500/60 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-white shadow-lg shadow-purple-500/30' 
+          : 'border-purple-500/20 hover:border-purple-500/40 text-slate-700 dark:text-gray-300 hover:text-white'
+      }`}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className={`absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 transition-opacity duration-300 ${isActive ? 'opacity-20' : 'opacity-0 group-hover:opacity-100'}`}></div>
       <span className="relative text-lg group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
       <span className="relative font-medium">{label}</span>
+      {isActive && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"></span>}
     </a>
   )
 }

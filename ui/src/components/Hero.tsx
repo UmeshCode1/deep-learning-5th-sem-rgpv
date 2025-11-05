@@ -1,8 +1,38 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function Hero(){
+export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [typedText, setTypedText] = useState('')
+  const subtitles = [
+    'Neural Networks & Deep Learning',
+    'AI & Machine Learning Excellence',
+    'Interactive Jupyter Notebooks',
+    'RGPV 5th Semester Course',
+    'Comprehensive Learning Resources'
+  ]
+  const [subtitleIndex, setSubtitleIndex] = useState(0)
 
+  // Typing effect
+  useEffect(() => {
+    const currentSubtitle = subtitles[subtitleIndex]
+    let charIndex = 0
+    
+    const typingInterval = setInterval(() => {
+      if (charIndex <= currentSubtitle.length) {
+        setTypedText(currentSubtitle.slice(0, charIndex))
+        charIndex++
+      } else {
+        clearInterval(typingInterval)
+        setTimeout(() => {
+          setSubtitleIndex((prev) => (prev + 1) % subtitles.length)
+        }, 2000)
+      }
+    }, 100)
+
+    return () => clearInterval(typingInterval)
+  }, [subtitleIndex])
+
+  // Particle animation
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -104,8 +134,21 @@ export default function Hero(){
             </div>
           </div>
 
+          {/* Dynamic Typing Subtitle */}
+          <div className="mb-8 animate-slide-in-bottom stagger-2">
+            <div className="glass-modern px-8 py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
+                <p className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white min-h-[32px]">
+                  {typedText}
+                  <span className="animate-pulse">|</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          
           {/* University info with enhanced styling */}
-          <div className="text-2xl text-purple-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-2">
+          <div className="text-2xl text-purple-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-3">
             <span className="inline-block px-8 py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
               🎓 RGPV Bhopal | 5th Semester
             </span>

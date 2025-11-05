@@ -6,6 +6,8 @@ import PracticalsView from './components/PracticalsView'
 import DeveloperInfo from './components/DeveloperInfo'
 import Hero from './components/Hero'
 import AssignmentsView from './components/AssignmentsView'
+import AnnouncementBanner from './components/AnnouncementBanner'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App(){
   return (
@@ -18,6 +20,7 @@ export default function App(){
 function AppContent(){
   return (
     <div className="min-h-screen transition-colors duration-500 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+      <AnnouncementBanner />
       <Navbar />
       <Hero />
       <main className="max-w-7xl mx-auto px-4 py-16 space-y-24">
@@ -97,6 +100,9 @@ function AppContent(){
           </div>
         </div>
       </footer>
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   )
 }
