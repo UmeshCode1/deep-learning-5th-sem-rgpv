@@ -24,12 +24,19 @@ export default function PracticalsView(){
 
   return (
     <section id="practicals" className="scroll-mt-20 perspective-2000">
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-8 animate-float">
-        <span className="text-5xl animate-rotate-3d">💻</span>
-        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:to-blue-400 animate-gradient">
-          Practical Notebooks
-        </h2>
+      {/* Enhanced Section Header */}
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-4 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 dark:from-blue-500 dark:to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
+            <span className="text-4xl">💻</span>
+          </div>
+          <h2 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-purple-600 dark:from-blue-400 dark:via-cyan-400 dark:to-purple-400 animate-gradient tracking-tighter">
+            Practical Notebooks
+          </h2>
+        </div>
+        <p className="text-xl text-slate-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+          Interactive Jupyter notebooks with hands-on implementations and real-world examples
+        </p>
       </div>
 
       {/* Search and Filter Bar */}

@@ -352,9 +352,9 @@ html {
 }
 
 [data-theme="light"] .navbar-blur {
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom: 1px solid rgba(147, 51, 234, 0.15);
-  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 0 4px 24px rgba(124, 58, 237, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* Particle effect */
@@ -602,7 +602,7 @@ canvas {
   animation: gradient-border 3s ease infinite;
 }
 
-/* Enhanced Glass Effect */
+/* Enhanced Glass Effect - Improved Light Theme */
 .glass-modern {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px) saturate(180%);
@@ -610,9 +610,10 @@ canvas {
 }
 
 [data-theme="light"] .glass-modern {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(139, 92, 246, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.12);
 }
 
 /* Skeleton Loading */
@@ -672,6 +673,52 @@ canvas {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Enhanced Light Theme Shadows */
+[data-theme="light"] .shadow-elevation-low {
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08), 0 1px 4px rgba(124, 58, 237, 0.06);
+}
+
+[data-theme="light"] .shadow-elevation-medium {
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12), 0 2px 8px rgba(124, 58, 237, 0.08);
+}
+
+[data-theme="light"] .shadow-elevation-high {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.16), 0 4px 16px rgba(124, 58, 237, 0.12);
+}
+
+/* Light Theme Card Backgrounds */
+[data-theme="light"] .card-bg-light {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+}
+
+/* Light Theme Text Gradients */
+.text-gradient-light {
+  background: linear-gradient(135deg, #7c3aed, #ec4899, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .text-gradient-light {
+  background: linear-gradient(135deg, #a78bfa, #f472b6, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Hover for Light Theme */
+[data-theme="light"] .hover-glow:hover {
+  box-shadow: 0 12px 48px rgba(124, 58, 237, 0.2), 0 0 0 1px rgba(124, 58, 237, 0.1);
+}
+
+/* Light Theme Border Gradient */
+[data-theme="light"] .border-gradient-light {
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #7c3aed, #ec4899, #3b82f6);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 ::-webkit-scrollbar-track {
