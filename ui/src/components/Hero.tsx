@@ -214,7 +214,7 @@ export default function Hero() {
 
 function StatBadge({icon, value, label}: {icon: string, value: string, label: string}) {
   return (
-    <div className="glass-modern p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group shadow-xl">
+    <div className="glass-modern card-glass card-hover p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group">
       <div className="text-5xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-smooth">{icon}</div>
       <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mb-2">{value}</div>
       <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">{label}</div>
