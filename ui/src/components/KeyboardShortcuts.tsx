@@ -190,7 +190,7 @@ export default function KeyboardShortcuts() {
                                 {key}
                               </kbd>
                               {keyIndex < shortcut.keys.length - 1 && (
-                                <span className="text-slate-700 dark:text-gray-400 font-semibold">+</span>
+                                <span className="text-slate-900 dark:text-gray-400 font-bold">+</span>
                               )}
                             </React.Fragment>
                           ))}
@@ -214,11 +214,11 @@ export default function KeyboardShortcuts() {
           {/* Footer */}
           <div className="p-4 bg-slate-900/30 dark:bg-slate-900/50 border-t border-purple-500/20">
             <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2 text-slate-800 dark:text-gray-400 font-medium">
+              <div className="flex items-center gap-2 text-slate-900 dark:text-gray-400 font-bold">
                 <Keyboard className="w-4 h-4" />
                 <span>{filteredShortcuts.length} shortcuts available</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-800 dark:text-gray-400 font-medium">
+              <div className="flex items-center gap-2 text-slate-900 dark:text-gray-400 font-bold">
                 <span>Press</span>
                 <kbd className="px-2 py-1 bg-slate-800 dark:bg-slate-700 text-white rounded text-xs font-mono">
                   Esc

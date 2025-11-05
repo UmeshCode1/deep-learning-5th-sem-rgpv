@@ -34,7 +34,7 @@ export default function PracticalsView(){
             Practical Notebooks
           </h2>
         </div>
-        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
+        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
           Interactive Jupyter notebooks with hands-on implementations and real-world examples
         </p>
       </div>
@@ -93,7 +93,7 @@ export default function PracticalsView(){
         </div>
 
         {/* Results count */}
-        <div className="mt-4 text-sm text-slate-800 dark:text-gray-400 font-medium">
+        <div className="mt-4 text-sm text-slate-900 dark:text-gray-400 font-bold">
           {filteredPracticals.length === practicals.length 
             ? `Showing all ${practicals.length} practicals`
             : `Found ${filteredPracticals.length} of ${practicals.length} practicals`
@@ -191,7 +191,7 @@ function StatCard({icon, value, label, color}: {icon: string, value: string, lab
       <div className={`text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${color} mb-3`}>
         {value}
       </div>
-      <div className="text-slate-800 dark:text-gray-400 text-lg font-semibold">{label}</div>
+      <div className="text-slate-900 dark:text-gray-400 text-lg font-bold">{label}</div>
     </div>
   )
 }

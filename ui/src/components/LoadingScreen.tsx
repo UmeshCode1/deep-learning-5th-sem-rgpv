@@ -56,7 +56,7 @@ export default function LoadingScreen() {
           <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
             Deep Learning Hub
           </h2>
-          <p className="text-lg font-semibold text-slate-600 dark:text-gray-400">
+          <p className="text-lg font-bold text-slate-900 dark:text-gray-400">
             Loading AI-Powered Learning Platform...
           </p>
         </div>

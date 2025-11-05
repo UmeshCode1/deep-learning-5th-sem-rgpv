@@ -29,7 +29,7 @@ export default function AssignmentsView(){
             Assignments
           </h2>
         </div>
-        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
+        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
           Structured assignments covering all units with varying difficulty levels
         </p>
       </div>
@@ -38,7 +38,7 @@ export default function AssignmentsView(){
       <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 mb-8 animate-slide-in-bottom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-sm text-slate-800 dark:text-gray-400 font-semibold">Filter by difficulty:</span>
+            <span className="text-sm text-slate-900 dark:text-gray-400 font-bold">Filter by difficulty:</span>
             <div className="flex gap-2">
               <button
                 onClick={() => setSelectedDifficulty(null)}
@@ -66,7 +66,7 @@ export default function AssignmentsView(){
             </div>
           </div>
 
-          <div className="text-sm text-slate-800 dark:text-gray-400 font-medium">
+          <div className="text-sm text-slate-900 dark:text-gray-400 font-bold">
             {filteredUnits.length === units.length
               ? `Showing all ${units.length} assignments`
               : `Found ${filteredUnits.length} ${selectedDifficulty} assignment${filteredUnits.length > 1 ? 's' : ''}`
@@ -153,7 +153,7 @@ function AssignmentStat({icon, value, label, color}: {icon: string, value: strin
       <div className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${color} mb-2`}>
         {value}
       </div>
-      <div className="text-sm text-slate-800 dark:text-gray-400 font-semibold">{label}</div>
+      <div className="text-sm text-slate-900 dark:text-gray-400 font-bold">{label}</div>
     </div>
   )
 }

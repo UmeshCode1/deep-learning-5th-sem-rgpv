@@ -47,7 +47,7 @@ export default function Navbar(){
               <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
                 RGPV Bhopal
               </div>
-              <div className="text-xs text-slate-700 dark:text-gray-400 font-semibold">Deep Learning — AL 503(B)</div>
+              <div className="text-xs text-slate-900 dark:text-gray-400 font-bold">Deep Learning — AL 503(B)</div>
             </div>
           </div>
 

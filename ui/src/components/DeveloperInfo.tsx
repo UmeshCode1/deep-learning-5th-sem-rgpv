@@ -14,7 +14,7 @@ export default function DeveloperInfo(){
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-400 dark:to-blue-400">
               Developer Details
             </h2>
-            <p className="text-slate-700 dark:text-gray-400 font-medium">Creator & Maintainer</p>
+            <p className="text-slate-800 dark:text-gray-400 font-bold">Creator & Maintainer</p>
           </div>
         </div>
 

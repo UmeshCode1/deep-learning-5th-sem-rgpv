@@ -21,7 +21,7 @@ export default function SyllabusView(){
             Course Syllabus
           </h2>
         </div>
-        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
+        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
           Comprehensive breakdown of all 5 units covering Deep Learning fundamentals to advanced topics
         </p>
       </div>

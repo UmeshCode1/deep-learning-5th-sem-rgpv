@@ -108,7 +108,7 @@ export default function LearningTimeline() {
             Learning Path
           </h2>
         </div>
-        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
+        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
           Your week-by-week journey through Deep Learning - from basics to advanced topics
         </p>
       </div>
@@ -208,7 +208,7 @@ export default function LearningTimeline() {
             <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mb-2">
               Course Complete!
             </h3>
-            <p className="text-slate-600 dark:text-gray-400">
+            <p className="text-slate-900 dark:text-gray-400 font-bold">
               Master all 5 units and become a Deep Learning expert
             </p>
           </div>
