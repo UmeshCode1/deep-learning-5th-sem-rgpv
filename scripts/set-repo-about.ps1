@@ -16,13 +16,22 @@
 #>
 [CmdletBinding()]
 param(
-  [string]$Description = "Deep Learning (AL 503(B)) — RGPV 5th Semester repo: notes, practicals, assignments, and a React UI deployed via GitHub Pages.",
+  # Use ASCII-only defaults to avoid encoding issues on Windows PowerShell 5.1
+  [string]$Description = "Deep Learning (AL 503(B)) - RGPV 5th Semester repo: notes, practicals, assignments, and a React UI deployed via GitHub Pages.",
   [string]$Homepage = "https://umeshcode1.github.io/deep-learning-5th-sem-rgpv/",
   [string[]]$Topics = @(
     "deep-learning","rgpv","aicte","pytorch","react","vite","tailwindcss",
     "jupyter-notebook","machine-learning","education","al503b"
   )
 )
+
+# Ensure we run from the repository root (script lives in ./scripts)
+try {
+  $repoRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
+  Set-Location -LiteralPath $repoRoot
+} catch {
+  Write-Error "Failed to change directory to repo root: $($_.Exception.Message)" -ErrorAction Stop
+}
 
 function Require-Command($name) {
   if (-not (Get-Command $name -ErrorAction SilentlyContinue)) {
@@ -40,7 +49,7 @@ try {
 }
 
 # Confirm repository context
-$repoInfo = gh repo view --json nameWithOwner,description,homepageUrl,topics | ConvertFrom-Json
+$repoInfo = gh repo view --json nameWithOwner,description,homepageUrl,repositoryTopics | ConvertFrom-Json
 if (-not $repoInfo) {
   throw "Unable to determine repository context. Ensure you are in a Git repo with a valid 'origin' remote."
 }
@@ -61,8 +70,21 @@ if ($Topics.Count -gt 0) {
 }
 
 # Show summary
-$updated = gh repo view --json nameWithOwner,description,homepageUrl,topics | ConvertFrom-Json
-Write-Host "\nUpdated About:" -ForegroundColor Green
+$updated = gh repo view --json nameWithOwner,description,homepageUrl,repositoryTopics | ConvertFrom-Json
+$topicNames = @()
+if ($updated.repositoryTopics -and $updated.repositoryTopics.nodes) {
+  $topicNames = $updated.repositoryTopics.nodes | ForEach-Object { $_.topic.name }
+}
+Write-Host ""  # newline
+Write-Host "Updated About:" -ForegroundColor Green
 Write-Host ("- Description: {0}" -f $updated.description)
 Write-Host ("- Homepage:   {0}" -f $updated.homepageUrl)
-Write-Host ("- Topics:     {0}" -f ($updated.topics -join ', '))
+if ($topicNames) {
+  $topicNames = $topicNames | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+}
+if ($topicNames -and $topicNames.Count -gt 0) {
+  Write-Host ("- Topics:     {0}" -f ($topicNames -join ", "))
+} else {
+  # Fallback to the topics we attempted to add (API shape may vary by gh version)
+  Write-Host ("- Topics:     {0}" -f ($Topics -join ", "))
+}
