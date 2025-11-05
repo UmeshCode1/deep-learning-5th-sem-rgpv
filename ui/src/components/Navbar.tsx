@@ -32,22 +32,24 @@ export default function Navbar(){
   }, [])
   
   return (
-    <nav className={`sticky top-0 z-50 navbar-blur border-b border-purple-500/20 transition-all duration-500 ${
-      scrolled ? 'shadow-2xl shadow-purple-500/20 py-2' : 'py-4'
+    <nav className={`sticky top-0 z-50 navbar-blur border-b backdrop-blur-2xl transition-all duration-500 ${
+      scrolled 
+        ? 'shadow-2xl shadow-indigo-500/30 dark:shadow-purple-500/30 py-2 sm:py-3 border-indigo-500/30 dark:border-purple-500/30 bg-white/80 dark:bg-slate-900/80' 
+        : 'py-3 sm:py-4 border-indigo-500/20 dark:border-purple-500/20 bg-white/60 dark:bg-slate-900/60'
     }`}>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Logo & Title */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 via-pink-500 to-blue-600 rounded-xl flex items-center justify-center shadow-3d-purple transform hover:rotate-12 hover:scale-110 transition-all duration-300 animate-pulse-glow group overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer"></div>
-              <span className="text-xl sm:text-2xl font-bold text-white relative z-10 group-hover:scale-125 transition-transform">DL</span>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="relative w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-600 dark:via-pink-500 dark:to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/50 dark:shadow-purple-500/50 transform hover:rotate-12 hover:scale-110 transition-all duration-300 animate-pulse-glow group overflow-hidden cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent shimmer"></div>
+              <span className="text-lg sm:text-2xl font-black text-white relative z-10 group-hover:scale-125 transition-transform">🧠</span>
             </div>
             <div className="hidden sm:block">
-              <div className="text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
-                RGPV Bhopal
+              <div className="text-sm sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient tracking-tight">
+                Deep Learning Hub
               </div>
-              <div className="text-xs text-slate-900 dark:text-gray-400 font-bold">Deep Learning — AL 503(B)</div>
+              <div className="text-xs text-slate-700 dark:text-gray-400 font-bold">RGPV — AL 503(B) | 5th Semester</div>
             </div>
           </div>
 
