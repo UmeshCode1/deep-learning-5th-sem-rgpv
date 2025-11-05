@@ -119,27 +119,27 @@ export default function Hero() {
       </div>
 
       {/* Hero content */}
-      <div className="relative max-w-7xl mx-auto px-4 py-24 text-center" style={{ zIndex: 2 }}>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 text-center" style={{ zIndex: 2 }}>
         <div className="animate-fade-in">
           {/* Main title with modern typography */}
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-8 animate-gradient animate-pulse-glow tracking-tighter leading-none drop-shadow-2xl">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-6 sm:mb-8 animate-gradient animate-pulse-glow tracking-tighter leading-none drop-shadow-2xl">
             Deep Learning
           </h1>
           
           {/* Course code badge with modern design */}
-          <div className="inline-block mb-6 animate-slide-in-bottom stagger-1">
-            <div className="glass-modern px-10 py-5 rounded-2xl gradient-border hover-lift neon-glow shadow-2xl">
-              <div className="text-5xl font-black text-black dark:text-white mb-2 tracking-tight">AL 503(B)</div>
-              <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
+          <div className="inline-block mb-5 sm:mb-6 animate-slide-in-bottom stagger-1">
+            <div className="glass-modern px-6 py-3 sm:px-10 sm:py-5 rounded-2xl gradient-border hover-lift neon-glow shadow-2xl">
+              <div className="text-3xl sm:text-5xl font-black text-black dark:text-white mb-1 sm:mb-2 tracking-tight">AL 503(B)</div>
+              <div className="text-xs sm:text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
             </div>
           </div>
 
           {/* Dynamic Typing Subtitle */}
-          <div className="mb-8 animate-slide-in-bottom stagger-2">
-            <div className="glass-modern px-8 py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
-                <p className="text-xl md:text-2xl font-bold text-black dark:text-white min-h-[32px]">
+          <div className="mb-6 sm:mb-8 animate-slide-in-bottom stagger-2">
+            <div className="glass-modern px-4 py-3 sm:px-8 sm:py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
+                <p className="text-base sm:text-xl md:text-2xl font-bold text-black dark:text-white min-h-[24px] sm:min-h-[32px]">
                   {typedText}
                   <span className="animate-pulse">|</span>
                 </p>
@@ -148,33 +148,33 @@ export default function Hero() {
           </div>
           
           {/* University info with enhanced styling */}
-          <div className="text-2xl text-indigo-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-3 font-semibold">
-            <span className="inline-block px-8 py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
+          <div className="text-base sm:text-xl md:text-2xl text-indigo-700 dark:text-purple-300 mb-8 sm:mb-12 animate-slide-in-bottom stagger-3 font-semibold">
+            <span className="inline-block px-4 py-2 sm:px-8 sm:py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
               🎓 RGPV Bhopal | 5th Semester
             </span>
           </div>
           
           {/* Developer card with modern design */}
-          <div className="inline-block mb-12 animate-slide-in-bottom stagger-3">
-            <div className="glass-modern px-12 py-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group cursor-pointer shadow-2xl">
-              <div className="flex items-center gap-5">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 rounded-2xl flex items-center justify-center text-4xl group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+          <div className="inline-block mb-8 sm:mb-12 animate-slide-in-bottom stagger-3">
+            <div className="glass-modern px-6 py-4 sm:px-12 sm:py-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group cursor-pointer shadow-2xl">
+              <div className="flex items-center gap-3 sm:gap-5">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 rounded-2xl flex items-center justify-center text-3xl sm:text-4xl group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                   👨‍💻
                 </div>
                 <div className="text-left">
-                  <p className="text-black dark:text-white font-black text-3xl group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
-                  <p className="text-indigo-700 dark:text-purple-300 text-base font-bold">AI & Machine Learning Enthusiast</p>
+                  <p className="text-black dark:text-white font-black text-xl sm:text-3xl group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
+                  <p className="text-indigo-700 dark:text-purple-300 text-sm sm:text-base font-bold">AI & Machine Learning Enthusiast</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Quote with modern card design */}
-          <div className="max-w-3xl mx-auto animate-slide-in-bottom stagger-4">
-            <div className="glass-modern p-8 rounded-3xl border border-purple-500/30 dark:border-purple-400/30 modern-card shadow-2xl">
-              <div className="flex items-start gap-5">
-                <span className="text-5xl float-smooth">💡</span>
-                <p className="text-slate-800 dark:text-gray-300 text-xl italic leading-relaxed text-left font-semibold">
+          <div className="max-w-3xl mx-auto animate-slide-in-bottom stagger-4 px-2 sm:px-0">
+            <div className="glass-modern p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-purple-500/30 dark:border-purple-400/30 modern-card shadow-2xl">
+              <div className="flex items-start gap-3 sm:gap-5">
+                <span className="text-3xl sm:text-5xl float-smooth">💡</span>
+                <p className="text-slate-800 dark:text-gray-300 text-sm sm:text-xl italic leading-relaxed text-left font-semibold">
                   "This repository is part of the official coursework for Deep Learning (AL503B) 
                   under RGPV, Bhopal, following the AICTE Flexible Curriculum"
                 </p>

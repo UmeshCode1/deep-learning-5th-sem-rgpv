@@ -12,16 +12,16 @@ export default function SyllabusView(){
   return (
     <section id="syllabus" className="scroll-mt-20 perspective-2000">
       {/* Enhanced Section Header */}
-      <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-4 mb-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 dark:from-purple-500 dark:to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
-            <span className="text-4xl">📚</span>
+      <div className="text-center mb-12 sm:mb-16 px-4">
+        <div className="inline-flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-600 to-pink-600 dark:from-purple-500 dark:to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
+            <span className="text-3xl sm:text-4xl">📚</span>
           </div>
-          <h2 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient tracking-tighter">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient tracking-tighter">
             Course Syllabus
           </h2>
         </div>
-        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
+        <p className="text-base sm:text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto leading-relaxed">
           Comprehensive breakdown of all 5 units covering Deep Learning fundamentals to advanced topics
         </p>
       </div>
@@ -40,20 +40,20 @@ export default function SyllabusView(){
               
               {/* Card content */}
               <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${u.color} rounded-2xl flex items-center justify-center text-4xl shadow-3d-purple transform group-hover:rotate-12 group-hover:scale-125 transition-all duration-500`}>
+                <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${u.color} rounded-2xl flex items-center justify-center text-3xl sm:text-4xl shadow-3d-purple transform group-hover:rotate-12 group-hover:scale-125 transition-all duration-500`}>
                     {u.icon}
                   </div>
-                  <div className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${u.color}`}>
+                  <div className={`text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${u.color}`}>
                     Unit {u.id}
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-black dark:text-white mb-4 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">{u.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-black dark:text-white mb-4 sm:mb-5 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors leading-snug">{u.title}</h3>
                 
                 <a 
                   href={`../syllabus/deep_learning_syllabus.md`}
-                  className={`inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r ${u.color} rounded-xl text-white text-sm font-medium shadow-3d-purple hover:shadow-2xl transform hover:scale-110 hover:-translate-y-1 hover:rotate-2 transition-all duration-300 card-3d group/btn`}
+                  className={`inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-gradient-to-r ${u.color} rounded-xl text-white text-sm font-medium shadow-3d-purple hover:shadow-2xl transform hover:scale-110 hover:-translate-y-1 hover:rotate-2 transition-all duration-300 card-3d group/btn`}
                 >
                   <span>View Details</span>
                   <span className="group-hover/btn:translate-x-1 transition-transform">→</span>

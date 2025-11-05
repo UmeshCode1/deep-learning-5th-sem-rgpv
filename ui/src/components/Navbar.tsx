@@ -38,13 +38,13 @@ export default function Navbar(){
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo & Title */}
-          <div className="flex items-center space-x-4">
-            <div className="relative w-14 h-14 bg-gradient-to-br from-purple-600 via-pink-500 to-blue-600 rounded-xl flex items-center justify-center shadow-3d-purple transform hover:rotate-12 hover:scale-110 transition-all duration-300 animate-pulse-glow group overflow-hidden">
+          <div className="flex items-center space-x-3 sm:space-x-4">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-600 via-pink-500 to-blue-600 rounded-xl flex items-center justify-center shadow-3d-purple transform hover:rotate-12 hover:scale-110 transition-all duration-300 animate-pulse-glow group overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer"></div>
-              <span className="text-2xl font-bold text-white relative z-10 group-hover:scale-125 transition-transform">DL</span>
+              <span className="text-xl sm:text-2xl font-bold text-white relative z-10 group-hover:scale-125 transition-transform">DL</span>
             </div>
-            <div className="hidden md:block">
-              <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
+            <div className="hidden sm:block">
+              <div className="text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 animate-gradient">
                 RGPV Bhopal
               </div>
               <div className="text-xs text-slate-900 dark:text-gray-400 font-bold">Deep Learning — AL 503(B)</div>

@@ -20,29 +20,29 @@ export default function AssignmentsView(){
   return (
     <section id="assignments" className="scroll-mt-20 perspective-2000">
       {/* Enhanced Section Header */}
-      <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-4 mb-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 dark:from-green-500 dark:to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
-            <span className="text-4xl">�</span>
+      <div className="text-center mb-12 sm:mb-16 px-4">
+        <div className="inline-flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-600 to-emerald-600 dark:from-green-500 dark:to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
+            <span className="text-3xl sm:text-4xl">📋</span>
           </div>
-          <h2 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 dark:from-green-400 dark:via-emerald-400 dark:to-teal-400 animate-gradient tracking-tighter">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 dark:from-green-400 dark:via-emerald-400 dark:to-teal-400 animate-gradient tracking-tighter">
             Assignments
           </h2>
         </div>
-        <p className="text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto">
+        <p className="text-base sm:text-xl text-slate-900 dark:text-gray-400 font-bold max-w-2xl mx-auto leading-relaxed">
           Structured assignments covering all units with varying difficulty levels
         </p>
       </div>
 
       {/* Difficulty Filter */}
-      <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 mb-8 animate-slide-in-bottom">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-slate-900 dark:text-gray-400 font-bold">Filter by difficulty:</span>
-            <div className="flex gap-2">
+      <div className="glass-dark p-4 sm:p-6 rounded-2xl border border-purple-500/20 mb-6 sm:mb-8 animate-slide-in-bottom">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 w-full md:w-auto">
+            <span className="text-xs sm:text-sm text-slate-900 dark:text-gray-400 font-bold">Filter by difficulty:</span>
+            <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => setSelectedDifficulty(null)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                   !selectedDifficulty
                     ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-blue-600 text-white shadow-lg'
                     : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
@@ -54,7 +54,7 @@ export default function AssignmentsView(){
                 <button
                   key={diff}
                   onClick={() => setSelectedDifficulty(diff === selectedDifficulty ? null : diff)}
-                  className={`px-4 py-2 rounded-lg text-sm font-bold transition-all transform hover:scale-105 ${
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-bold transition-all transform hover:scale-105 ${
                     selectedDifficulty === diff
                       ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-blue-600 text-white shadow-xl border-2 border-indigo-400 dark:border-purple-400'
                       : 'bg-white dark:bg-slate-900/70 text-indigo-700 dark:text-gray-300 hover:text-indigo-900 dark:hover:text-white border-2 border-indigo-500/50 dark:border-purple-500/30 hover:border-indigo-600 dark:hover:border-purple-500/50 hover:shadow-lg'

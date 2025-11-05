@@ -5,20 +5,20 @@ export default function DeveloperInfo(){
     <section id="developer" className="relative perspective-2000">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-3xl blur-3xl animate-pulse"></div>
       
-      <div className="relative glass-dark backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 dark:border-purple-400/20 shadow-2xl transform hover:scale-[1.02] transition-all duration-500 card-3d">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-sky-600 dark:from-purple-500 dark:to-blue-500 rounded-2xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
-            <span className="text-3xl">👨‍💻</span>
+      <div className="relative glass-dark backdrop-blur-xl rounded-3xl p-5 sm:p-8 border border-purple-500/20 dark:border-purple-400/20 shadow-2xl transform hover:scale-[1.02] transition-all duration-500 card-3d">
+        <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-600 to-sky-600 dark:from-purple-500 dark:to-blue-500 rounded-2xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+            <span className="text-2xl sm:text-3xl">👨‍💻</span>
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-400 dark:to-blue-400">
+            <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-400 dark:to-blue-400">
               Developer Details
             </h2>
-            <p className="text-slate-800 dark:text-gray-400 font-bold">Creator & Maintainer</p>
+            <p className="text-sm sm:text-base text-slate-800 dark:text-gray-400 font-bold">Creator & Maintainer</p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
           {/* Left column - Personal Info */}
           <div className="space-y-4">
             <InfoCard icon="👤" label="Name" value="Umesh Patel" />
@@ -37,11 +37,11 @@ export default function DeveloperInfo(){
         </div>
 
         {/* Project Vision */}
-        <div className="mt-8 p-6 bg-gradient-to-r from-indigo-100/70 to-sky-100/70 dark:from-purple-900/30 dark:to-blue-900/30 rounded-2xl border border-indigo-500/30 dark:border-purple-400/20 shadow-md">
-          <h3 className="text-xl font-bold text-indigo-700 dark:text-purple-300 mb-3 flex items-center gap-2">
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-r from-indigo-100/70 to-sky-100/70 dark:from-purple-900/30 dark:to-blue-900/30 rounded-2xl border border-indigo-500/30 dark:border-purple-400/20 shadow-md">
+          <h3 className="text-lg sm:text-xl font-bold text-indigo-700 dark:text-purple-300 mb-2 sm:mb-3 flex items-center gap-2">
             <span>🎯</span> Project Vision
           </h3>
-          <p className="text-slate-800 dark:text-gray-300 leading-relaxed font-medium">
+          <p className="text-sm sm:text-base text-slate-800 dark:text-gray-300 leading-relaxed font-medium">
             This repository provides an <span className="text-indigo-700 dark:text-purple-400 font-bold">interactive and well-documented</span> learning environment 
             for Deep Learning as per the RGPV syllabus — combining theory, practicals, and real-world demonstrations through organized notes, 
             Jupyter notebooks, responsive React UI, and reference materials.
@@ -49,8 +49,8 @@ export default function DeveloperInfo(){
         </div>
 
         {/* Contact Section */}
-        <div className="mt-8">
-          <h3 className="text-xl font-bold text-indigo-700 dark:text-purple-300 mb-4 flex items-center gap-2">
+        <div className="mt-6 sm:mt-8">
+          <h3 className="text-lg sm:text-xl font-bold text-indigo-700 dark:text-purple-300 mb-3 sm:mb-4 flex items-center gap-2">
             <span>📬</span> Connect With Me
           </h3>
           <div className="flex flex-wrap gap-3">
