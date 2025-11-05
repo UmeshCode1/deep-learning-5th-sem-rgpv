@@ -138,7 +138,7 @@ function AppContent(){
         <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-pink-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 pb-32 sm:pb-40">
           {/* Footer Content Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
             {/* About Section - Enhanced */}
