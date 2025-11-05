@@ -9,6 +9,11 @@ import AssignmentsView from './components/AssignmentsView'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import ScrollToTop from './components/ScrollToTop'
 import LoadingScreen from './components/LoadingScreen'
+import ProgressTracker from './components/ProgressTracker'
+import CodePreview from './components/CodePreview'
+import LearningTimeline from './components/LearningTimeline'
+import StatsDashboard from './components/StatsDashboard'
+import KeyboardShortcuts from './components/KeyboardShortcuts'
 import { initScrollAnimations } from './utils/scrollAnimations'
 
 export default function App(){
@@ -47,7 +52,14 @@ function AppContent(){
         <SyllabusView />
         <PracticalsView />
         <AssignmentsView />
+        <CodePreview />
+        <LearningTimeline />
       </main>
+      
+      {/* Floating Components */}
+      <ProgressTracker />
+      <StatsDashboard />
+      <KeyboardShortcuts />
       
       {/* Modern Footer */}
       <footer className="relative mt-24 overflow-hidden">
