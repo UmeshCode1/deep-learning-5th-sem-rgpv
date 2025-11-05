@@ -80,10 +80,10 @@ export default function PracticalsView(){
               <button
                 key={tag}
                 onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-bold transition-all transform hover:scale-105 ${
                   selectedTag === tag
-                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                    : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
+                    ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-blue-600 text-white shadow-xl border-2 border-indigo-400 dark:border-purple-400'
+                    : 'bg-white dark:bg-slate-900/70 text-indigo-700 dark:text-gray-300 hover:text-indigo-900 dark:hover:text-white border-2 border-indigo-500/50 dark:border-purple-500/30 hover:border-indigo-600 dark:hover:border-purple-500/50 hover:shadow-lg'
                 }`}
               >
                 {tag}
@@ -161,7 +161,7 @@ export default function PracticalsView(){
                   {p.tags.map(tag => (
                     <span 
                       key={tag}
-                      className="px-3 py-1 bg-indigo-100 dark:bg-purple-500/20 border border-indigo-400 dark:border-purple-500/30 rounded-full text-xs text-indigo-800 dark:text-purple-300 font-semibold"
+                      className="px-3 py-1.5 bg-indigo-200 dark:bg-purple-500/30 border-2 border-indigo-600 dark:border-purple-500/50 rounded-full text-xs text-indigo-900 dark:text-purple-200 font-bold shadow-md"
                     >
                       {tag}
                     </span>

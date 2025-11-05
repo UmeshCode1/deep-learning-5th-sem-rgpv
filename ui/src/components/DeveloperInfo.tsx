@@ -67,11 +67,11 @@ export default function DeveloperInfo(){
 
 function InfoCard({icon, label, value}: {icon: string, label: string, value: string}){
   return (
-    <div className="flex items-start gap-3 p-4 bg-white/80 dark:bg-slate-900/50 rounded-xl border border-indigo-500/20 dark:border-purple-500/20 hover:border-indigo-500/40 dark:hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/25 dark:hover:shadow-purple-500/25 card-3d group">
-      <span className="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
+    <div className="flex items-start gap-3 p-4 sm:p-5 bg-gradient-to-br from-white to-indigo-50/50 dark:from-slate-900/80 dark:to-slate-800/50 rounded-xl border-2 border-indigo-500/40 dark:border-purple-500/30 hover:border-indigo-600/60 dark:hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/30 dark:hover:shadow-purple-500/25 card-3d group">
+      <span className="text-2xl sm:text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
       <div>
-        <div className="text-sm text-slate-700 dark:text-gray-500 mb-1 font-semibold">{label}</div>
-        <div className="text-gray-900 dark:text-white font-bold">{value}</div>
+        <div className="text-sm text-indigo-700 dark:text-gray-400 mb-1 font-bold uppercase tracking-wide">{label}</div>
+        <div className="text-gray-900 dark:text-white font-bold text-base">{value}</div>
       </div>
     </div>
   )

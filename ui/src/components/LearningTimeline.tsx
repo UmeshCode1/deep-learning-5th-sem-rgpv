@@ -180,7 +180,7 @@ export default function LearningTimeline() {
                       {item.practicals.map((practical, i) => (
                         <span 
                           key={i}
-                          className={`px-3 py-1 rounded-lg bg-gradient-to-r ${item.color} bg-opacity-20 text-sm font-medium border border-purple-500/30 text-slate-900 dark:text-white`}
+                          className={`px-3 py-1.5 rounded-lg bg-gradient-to-r ${item.color} text-sm font-bold border-2 border-white/30 dark:border-white/20 text-white shadow-lg`}
                         >
                           {practical}
                         </span>
