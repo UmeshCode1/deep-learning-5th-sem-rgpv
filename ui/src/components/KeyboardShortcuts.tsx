@@ -97,7 +97,7 @@ export default function KeyboardShortcuts() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-20 left-4 sm:bottom-24 sm:left-8 z-40 p-3 sm:p-4 bg-gradient-to-br from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 border-2 border-white/20 group"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] left-[calc(env(safe-area-inset-left)+0.75rem)] sm:bottom-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:left-[calc(env(safe-area-inset-left)+2rem)] z-30 p-3 sm:p-4 bg-gradient-to-br from-purple-600 to-indigo-600 dark:from-purple-500 dark:to-indigo-500 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 border-2 border-white/20 group"
         aria-label="Show keyboard shortcuts"
         title="Press ? for shortcuts"
       >

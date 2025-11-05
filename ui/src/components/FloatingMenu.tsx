@@ -14,7 +14,7 @@ export default function FloatingMenu() {
   ]
 
   return (
-    <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-50">
+    <div className="fixed bottom-[calc(env(safe-area-inset-bottom)+6rem)] right-[calc(env(safe-area-inset-right)+0.75rem)] sm:bottom-[calc(env(safe-area-inset-bottom)+7rem)] sm:right-[calc(env(safe-area-inset-right)+2rem)] z-50">
       {/* Menu Items */}
       <div className={`absolute bottom-16 right-0 flex flex-col gap-3 transition-all duration-300 ${
         isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'

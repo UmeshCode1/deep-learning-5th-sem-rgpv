@@ -34,7 +34,7 @@ export default function ScrollToTop() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-40 flex flex-col gap-3 animate-fade-in">
+    <div className="fixed bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] right-[calc(env(safe-area-inset-right)+0.75rem)] sm:bottom-[calc(env(safe-area-inset-bottom)+1.5rem)] sm:right-[calc(env(safe-area-inset-right)+1.5rem)] z-40 flex flex-col gap-3 animate-fade-in">
       {/* Scroll to Top Button - Enhanced */}
       <button
         onClick={scrollToTop}

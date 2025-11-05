@@ -44,7 +44,7 @@ export default function Navbar(){
   }, [])
   
   return (
-    <nav className={`sticky top-0 z-50 navbar-blur border-b backdrop-blur-2xl transition-all duration-500 ${
+  <nav className={`sticky top-[env(safe-area-inset-top)] z-50 navbar-blur border-b backdrop-blur-2xl transition-all duration-500 ${
       scrolled 
         ? 'shadow-2xl shadow-indigo-500/30 dark:shadow-purple-500/30 py-2 sm:py-3 border-indigo-500/30 dark:border-purple-500/30 bg-white/80 dark:bg-slate-900/80' 
         : 'py-3 sm:py-4 border-indigo-500/20 dark:border-purple-500/20 bg-white/60 dark:bg-slate-900/60'
