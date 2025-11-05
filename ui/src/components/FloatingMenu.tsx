@@ -51,7 +51,7 @@ export default function FloatingMenu() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-500 dark:via-pink-500 dark:to-blue-500 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group border-3 border-white/30 overflow-hidden ${
+        className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-500 dark:via-pink-500 dark:to-blue-500 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group border-2 border-white/30 overflow-hidden ${
           isOpen ? 'rotate-90' : 'rotate-0'
         }`}
         aria-label={isOpen ? 'Close quick menu' : 'Open quick menu'}

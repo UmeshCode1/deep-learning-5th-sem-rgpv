@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import SectionHeader from './components/SectionHeader'
 import LoadingScreen from './components/LoadingScreen'
 import ScrollToTop from './components/ScrollToTop'
 import ScrollProgress from './components/ScrollProgress'
@@ -88,31 +89,37 @@ function AppContent(){
       <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24" role="main">
         <Suspense fallback={<ComponentLoader />}>
           <section id="developer" className="section reveal scroll-fade-in">
+            <SectionHeader id="developer" title="Developer" emoji="👨‍💻" />
             <DeveloperInfo />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
           <section id="syllabus" className="section reveal scroll-fade-in">
+            <SectionHeader id="syllabus" title="Syllabus" emoji="📚" />
             <SyllabusView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
           <section id="practicals" className="section reveal scroll-fade-in">
+            <SectionHeader id="practicals" title="Practicals" emoji="💻" />
             <PracticalsView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
           <section id="assignments" className="section reveal scroll-fade-in">
+            <SectionHeader id="assignments" title="Assignments" emoji="📝" />
             <AssignmentsView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
           <section id="code-examples" className="section reveal scroll-fade-in">
+            <SectionHeader id="code-examples" title="Code Examples" emoji="💡" />
             <CodePreview />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
           <section id="learning-timeline" className="section reveal scroll-fade-in">
+            <SectionHeader id="learning-timeline" title="Learning Timeline" emoji="🗓️" />
             <LearningTimeline />
           </section>
         </Suspense>

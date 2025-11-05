@@ -1,5 +1,4 @@
-/* Modern Typography */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* Modern Typography - fonts loaded via <link> in index.html */
 
 @tailwind base;
 @tailwind components;
@@ -298,6 +297,15 @@ textarea:focus-visible {
 
 .animate-wiggle {
   animation: wiggle 0.5s ease-in-out;
+}
+
+/* Slide-in from bottom utility (used by mobile menus) */
+@keyframes slide-in-bottom {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in-bottom {
+  animation: slide-in-bottom 0.4s ease-out both;
 }
 
 .hover-lift {
