@@ -440,6 +440,40 @@ html {
   -webkit-backdrop-filter: blur(24px) saturate(200%);
 }
 
+/* Lightweight section reveal animations */
+.reveal,
+.scroll-fade-in,
+.scroll-slide-left,
+.scroll-slide-right,
+.scroll-scale-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-slide-left { transform: translateX(24px); }
+.scroll-slide-right { transform: translateX(-24px); }
+.scroll-scale-up { transform: scale(0.96); }
+
+.is-visible,
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .scroll-fade-in,
+  .scroll-slide-left,
+  .scroll-slide-right,
+  .scroll-scale-up {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
 [data-theme="dark"] .glass-modern {
   background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(168, 85, 247, 0.35);

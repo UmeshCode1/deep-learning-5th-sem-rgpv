@@ -81,6 +81,7 @@ export default function Navbar(){
                   : 'bg-gradient-to-r from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/40 hover:shadow-indigo-500/60 border-2 border-indigo-600/40'
               }`}
               aria-label="Toggle theme"
+              aria-pressed={theme === 'dark'}
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer"></div>
@@ -100,6 +101,9 @@ export default function Navbar(){
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg glass-dark border border-purple-500/20 hover-lift"
+            aria-controls="mobile-menu"
+            aria-expanded={mobileMenuOpen}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
@@ -113,7 +117,7 @@ export default function Navbar(){
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-dark rounded-2xl border border-purple-500/20 p-4 animate-slide-in-bottom">
+          <div id="mobile-menu" className="md:hidden mt-4 glass-dark rounded-2xl border border-purple-500/20 p-4 animate-slide-in-bottom">
             <div className="flex flex-col space-y-2">
               <MobileNavLink href="#developer" icon="👨‍💻" label="Developer" onClick={() => setMobileMenuOpen(false)} />
               <MobileNavLink href="#syllabus" icon="📚" label="Syllabus" onClick={() => setMobileMenuOpen(false)} />

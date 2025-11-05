@@ -87,22 +87,34 @@ function AppContent(){
         <Hero />
       <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24" role="main">
         <Suspense fallback={<ComponentLoader />}>
-          <DeveloperInfo />
+          <section id="developer" className="reveal scroll-fade-in">
+            <DeveloperInfo />
+          </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <SyllabusView />
+          <section id="syllabus" className="reveal scroll-fade-in">
+            <SyllabusView />
+          </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <PracticalsView />
+          <section id="practicals" className="reveal scroll-fade-in">
+            <PracticalsView />
+          </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <AssignmentsView />
+          <section id="assignments" className="reveal scroll-fade-in">
+            <AssignmentsView />
+          </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <CodePreview />
+          <section id="code-examples" className="reveal scroll-fade-in">
+            <CodePreview />
+          </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <LearningTimeline />
+          <section id="learning-timeline" className="reveal scroll-fade-in">
+            <LearningTimeline />
+          </section>
         </Suspense>
       </main>
       
