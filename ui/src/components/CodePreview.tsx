@@ -106,7 +106,7 @@ export default function CodePreview() {
             Code Examples
           </h2>
         </div>
-        <p className="text-xl text-slate-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
           Interactive code snippets from your practicals with live preview
         </p>
       </div>

@@ -34,7 +34,7 @@ export default function PracticalsView(){
             Practical Notebooks
           </h2>
         </div>
-        <p className="text-xl text-slate-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
           Interactive Jupyter notebooks with hands-on implementations and real-world examples
         </p>
       </div>
@@ -70,8 +70,8 @@ export default function PracticalsView(){
               onClick={() => setSelectedTag(null)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 !selectedTag 
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg' 
-                  : 'bg-slate-900/50 text-gray-400 hover:text-white border border-purple-500/20'
+                  ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-blue-600 text-white shadow-lg' 
+                  : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
               }`}
             >
               All
@@ -83,7 +83,7 @@ export default function PracticalsView(){
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedTag === tag
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                    : 'bg-slate-900/50 text-gray-400 hover:text-white border border-purple-500/20'
+                    : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
                 }`}
               >
                 {tag}
@@ -93,7 +93,7 @@ export default function PracticalsView(){
         </div>
 
         {/* Results count */}
-        <div className="mt-4 text-sm text-slate-600 dark:text-gray-400">
+        <div className="mt-4 text-sm text-slate-800 dark:text-gray-400 font-medium">
           {filteredPracticals.length === practicals.length 
             ? `Showing all ${practicals.length} practicals`
             : `Found ${filteredPracticals.length} of ${practicals.length} practicals`
@@ -136,11 +136,11 @@ export default function PracticalsView(){
                         <span className={`px-4 py-2 bg-gradient-to-r ${p.color} rounded-xl text-white text-base font-bold shadow-lg transform group-hover:scale-110 transition-transform`}>
                           {p.id}
                         </span>
-                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
                           {p.title}
                         </h3>
                       </div>
-                      <p className="text-slate-600 dark:text-gray-400 text-base group-hover:text-slate-700 dark:group-hover:text-gray-300 transition-colors">
+                      <p className="text-slate-800 dark:text-gray-400 text-base font-medium group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
                         {p.desc}
                       </p>
                     </div>

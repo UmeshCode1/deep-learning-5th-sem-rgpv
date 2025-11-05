@@ -108,7 +108,7 @@ export default function LearningTimeline() {
             Learning Path
           </h2>
         </div>
-        <p className="text-xl text-slate-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
           Your week-by-week journey through Deep Learning - from basics to advanced topics
         </p>
       </div>
@@ -149,20 +149,20 @@ export default function LearningTimeline() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-2xl font-black text-slate-900 dark:text-white mb-2 sm:mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-black text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">
                     {item.title}
                   </h3>
 
                   {/* Topics */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
+                    <h4 className="text-sm font-bold text-indigo-700 dark:text-purple-400 uppercase tracking-wider mb-2">
                       Key Topics:
                     </h4>
                     <ul className="space-y-2">
                       {item.topics.map((topic, i) => (
                         <li 
                           key={i} 
-                          className="flex items-start gap-2 text-slate-700 dark:text-gray-300 text-sm"
+                          className="flex items-start gap-2 text-slate-800 dark:text-gray-300 text-sm font-medium"
                         >
                           <span className="text-purple-500 mt-0.5">▸</span>
                           <span>{topic}</span>
@@ -173,7 +173,7 @@ export default function LearningTimeline() {
 
                   {/* Practicals */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2">
+                    <h4 className="text-sm font-bold text-sky-700 dark:text-blue-400 uppercase tracking-wider mb-2">
                       Hands-on:
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -191,7 +191,7 @@ export default function LearningTimeline() {
                   {/* Milestone */}
                   <div className="flex items-center gap-2 p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 rounded-lg border border-purple-500/20">
                     <span className="text-xl">🎯</span>
-                    <span className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+                    <span className="text-sm font-bold text-indigo-700 dark:text-purple-300">
                       {item.milestone}
                     </span>
                   </div>

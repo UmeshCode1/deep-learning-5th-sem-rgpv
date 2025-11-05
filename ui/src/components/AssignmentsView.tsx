@@ -29,7 +29,7 @@ export default function AssignmentsView(){
             Assignments
           </h2>
         </div>
-        <p className="text-xl text-slate-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+        <p className="text-xl text-slate-800 dark:text-gray-400 font-semibold max-w-2xl mx-auto">
           Structured assignments covering all units with varying difficulty levels
         </p>
       </div>
@@ -38,14 +38,14 @@ export default function AssignmentsView(){
       <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 mb-8 animate-slide-in-bottom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-sm text-slate-600 dark:text-gray-400">Filter by difficulty:</span>
+            <span className="text-sm text-slate-800 dark:text-gray-400 font-semibold">Filter by difficulty:</span>
             <div className="flex gap-2">
               <button
                 onClick={() => setSelectedDifficulty(null)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   !selectedDifficulty
-                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                    : 'bg-slate-900/50 text-gray-400 hover:text-white border border-purple-500/20'
+                    ? 'bg-gradient-to-r from-indigo-600 to-sky-600 dark:from-purple-600 dark:to-blue-600 text-white shadow-lg'
+                    : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
                 }`}
               >
                 All
@@ -57,7 +57,7 @@ export default function AssignmentsView(){
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     selectedDifficulty === diff
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                      : 'bg-slate-900/50 text-gray-400 hover:text-white border border-purple-500/20'
+                      : 'bg-white/60 dark:bg-slate-900/50 text-slate-800 dark:text-gray-400 hover:text-indigo-700 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 font-medium'
                   }`}
                 >
                   {diff}
@@ -66,7 +66,7 @@ export default function AssignmentsView(){
             </div>
           </div>
 
-          <div className="text-sm text-slate-600 dark:text-gray-400">
+          <div className="text-sm text-slate-800 dark:text-gray-400 font-medium">
             {filteredUnits.length === units.length
               ? `Showing all ${units.length} assignments`
               : `Found ${filteredUnits.length} ${selectedDifficulty} assignment${filteredUnits.length > 1 ? 's' : ''}`
@@ -102,7 +102,7 @@ export default function AssignmentsView(){
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">{u.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors">{u.title}</h3>
                 
                 {/* Topics tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -124,7 +124,7 @@ export default function AssignmentsView(){
                   </a>
                   <a 
                     href={`../assignments/README.md`} 
-                    className="inline-flex items-center justify-center gap-2 px-4 py-3 glass-dark rounded-xl text-slate-700 dark:text-white/80 hover:text-slate-900 dark:hover:text-white border border-purple-500/20 hover:border-purple-500/40 transition-all hover-lift"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3 glass-dark rounded-xl text-slate-800 dark:text-white/80 hover:text-gray-900 dark:hover:text-white border border-indigo-500/30 dark:border-purple-500/20 hover:border-indigo-500/50 dark:hover:border-purple-500/40 transition-all hover-lift font-medium"
                   >
                     <span className="text-lg">📘</span>
                   </a>
@@ -153,7 +153,7 @@ function AssignmentStat({icon, value, label, color}: {icon: string, value: strin
       <div className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${color} mb-2`}>
         {value}
       </div>
-      <div className="text-sm text-slate-600 dark:text-gray-400">{label}</div>
+      <div className="text-sm text-slate-800 dark:text-gray-400 font-semibold">{label}</div>
     </div>
   )
 }

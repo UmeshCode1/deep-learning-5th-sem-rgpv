@@ -129,8 +129,8 @@ export default function Hero() {
           {/* Course code badge with modern design */}
           <div className="inline-block mb-6 animate-slide-in-bottom stagger-1">
             <div className="glass-modern px-10 py-5 rounded-2xl gradient-border hover-lift neon-glow shadow-2xl">
-              <div className="text-5xl font-black text-slate-900 dark:text-white mb-2 tracking-tight">AL 503(B)</div>
-              <div className="text-sm font-bold text-purple-600 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
+              <div className="text-5xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">AL 503(B)</div>
+              <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">Course Code</div>
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export default function Hero() {
             <div className="glass-modern px-8 py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
-                <p className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white min-h-[32px]">
+                <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white min-h-[32px]">
                   {typedText}
                   <span className="animate-pulse">|</span>
                 </p>
@@ -148,7 +148,7 @@ export default function Hero() {
           </div>
           
           {/* University info with enhanced styling */}
-          <div className="text-2xl text-purple-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-3">
+          <div className="text-2xl text-indigo-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-3 font-semibold">
             <span className="inline-block px-8 py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
               🎓 RGPV Bhopal | 5th Semester
             </span>
@@ -162,8 +162,8 @@ export default function Hero() {
                   👨‍💻
                 </div>
                 <div className="text-left">
-                  <p className="text-slate-900 dark:text-white font-black text-3xl group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
-                  <p className="text-purple-600 dark:text-purple-300 text-base font-semibold">AI & Machine Learning Enthusiast</p>
+                  <p className="text-gray-900 dark:text-white font-black text-3xl group-hover:text-indigo-700 dark:group-hover:text-purple-300 transition-colors tracking-tight">Umesh Patel</p>
+                  <p className="text-indigo-700 dark:text-purple-300 text-base font-bold">AI & Machine Learning Enthusiast</p>
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function Hero() {
             <div className="glass-modern p-8 rounded-3xl border border-purple-500/30 dark:border-purple-400/30 modern-card shadow-2xl">
               <div className="flex items-start gap-5">
                 <span className="text-5xl float-smooth">💡</span>
-                <p className="text-slate-700 dark:text-gray-300 text-xl italic leading-relaxed text-left font-medium">
+                <p className="text-slate-800 dark:text-gray-300 text-xl italic leading-relaxed text-left font-semibold">
                   "This repository is part of the official coursework for Deep Learning (AL503B) 
                   under RGPV, Bhopal, following the AICTE Flexible Curriculum"
                 </p>
@@ -191,7 +191,7 @@ export default function Hero() {
 
           {/* Scroll indicator */}
           <div className="mt-20 animate-bounce">
-            <div className="inline-flex flex-col items-center gap-2 text-purple-600 dark:text-purple-300">
+            <div className="inline-flex flex-col items-center gap-2 text-indigo-700 dark:text-purple-300">
               <span className="text-sm font-medium">Explore</span>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -209,7 +209,7 @@ function StatBadge({icon, value, label}: {icon: string, value: string, label: st
     <div className="glass-modern p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group shadow-xl">
       <div className="text-5xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-smooth">{icon}</div>
       <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mb-2">{value}</div>
-      <div className="text-sm font-bold text-purple-600 dark:text-purple-300 uppercase tracking-widest">{label}</div>
+      <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">{label}</div>
     </div>
   )
 }
