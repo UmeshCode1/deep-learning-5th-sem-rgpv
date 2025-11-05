@@ -19,29 +19,33 @@ body[data-theme="light"] {
   @apply bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 text-gray-900;
 }
 
-/* Theme variables */
+/* Theme variables - Enhanced for Perfect Visibility */
 [data-theme="light"] {
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
-  --bg-glass: rgba(255, 255, 255, 0.7);
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
+  --bg-glass: rgba(255, 255, 255, 0.92);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
   --text-accent: #7c3aed;
-  --border-color: rgba(147, 51, 234, 0.15);
-  --shadow-color: rgba(139, 92, 246, 0.1);
-  --glow-color: rgba(139, 92, 246, 0.2);
+  --border-color: rgba(124, 58, 237, 0.3);
+  --shadow-color: rgba(124, 58, 237, 0.18);
+  --glow-color: rgba(124, 58, 237, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --overlay: rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0f172a;
+  --bg-primary: #0a0f1e;
   --bg-secondary: #1e293b;
-  --bg-glass: rgba(15, 23, 42, 0.7);
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-accent: #a78bfa;
-  --border-color: rgba(168, 85, 247, 0.2);
-  --shadow-color: rgba(168, 85, 247, 0.15);
-  --glow-color: rgba(168, 85, 247, 0.3);
+  --bg-glass: rgba(20, 30, 48, 0.75);
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-accent: #c4b5fd;
+  --border-color: rgba(168, 85, 247, 0.35);
+  --shadow-color: rgba(168, 85, 247, 0.25);
+  --glow-color: rgba(168, 85, 247, 0.5);
+  --card-bg: rgba(30, 41, 59, 0.85);
+  --overlay: rgba(0, 0, 0, 0.8);
 }
 
 /* Custom 3D animations */
@@ -673,6 +677,199 @@ canvas {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Orbit Animation for Loading Screen */
+@keyframes orbit {
+  from { 
+    transform: rotate(0deg) translateX(60px) rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg) translateX(60px) rotate(-360deg); 
+  }
+}
+
+/* Slow Spin */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Scroll Animation Classes */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-scale-up {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-scale-up.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays for scroll animations */
+.scroll-delay-100 { transition-delay: 100ms; }
+.scroll-delay-200 { transition-delay: 200ms; }
+.scroll-delay-300 { transition-delay: 300ms; }
+.scroll-delay-400 { transition-delay: 400ms; }
+.scroll-delay-500 { transition-delay: 500ms; }
+
+/* Parallax effect */
+.parallax {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Enhanced hover effects with depth */
+.hover-depth {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-depth:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3),
+              0 0 0 1px rgba(124, 58, 237, 0.1);
+}
+
+[data-theme="dark"] .hover-depth:hover {
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.4),
+              0 0 0 1px rgba(168, 85, 247, 0.2);
+}
+
+/* Magnetic hover effect */
+.magnetic {
+  position: relative;
+  transition: transform 0.2s ease-out;
+}
+
+.magnetic:hover {
+  transform: scale(1.05);
+}
+
+/* Ripple effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive Optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for performance */
+  .hover-depth:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Reduce motion for mobile */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hover-depth:hover {
+    transform: translateY(-8px) scale(1.025);
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhanced hover states */
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Crisper borders */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Dark mode specific enhancements */
+@media (prefers-color-scheme: dark) {
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
 }
 
 /* Enhanced Light Theme Shadows */

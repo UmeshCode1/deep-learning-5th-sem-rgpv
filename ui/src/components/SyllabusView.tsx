@@ -30,13 +30,13 @@ export default function SyllabusView(){
         {units.map((u, idx) => (
           <div 
             key={u.id} 
-            className="group relative perspective-1000"
+            className="group relative perspective-1000 scroll-fade-in scroll-scale-up"
             style={{animationDelay: `${idx * 100}ms`}}
           >
             {/* 3D Card Effect */}
-            <div className="relative glass-dark backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 shadow-3d hover:shadow-3d-purple transform hover:-translate-y-4 hover:scale-105 transition-all duration-500 card-3d hover-lift">
+            <div className="relative glass-dark backdrop-blur-xl rounded-3xl p-8 border border-purple-500/30 dark:border-purple-400/30 hover:border-purple-500/60 dark:hover:border-purple-400/60 shadow-2xl hover-depth transition-all duration-500 card-3d">
               {/* Glow effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${u.color} opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 rounded-2xl blur-2xl transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${u.color} opacity-0 group-hover:opacity-25 dark:group-hover:opacity-35 rounded-3xl blur-2xl transition-opacity duration-500 -z-10`}></div>
               
               {/* Card content */}
               <div className="relative z-10">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import SyllabusView from './components/SyllabusView'
@@ -8,6 +8,8 @@ import Hero from './components/Hero'
 import AssignmentsView from './components/AssignmentsView'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import ScrollToTop from './components/ScrollToTop'
+import LoadingScreen from './components/LoadingScreen'
+import { initScrollAnimations } from './utils/scrollAnimations'
 
 export default function App(){
   return (
@@ -18,11 +20,28 @@ export default function App(){
 }
 
 function AppContent(){
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+      // Initialize scroll animations after loading
+      setTimeout(() => {
+        initScrollAnimations()
+      }, 100)
+    }, 2000)
+    
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <div className="min-h-screen transition-colors duration-500 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
-      <AnnouncementBanner />
-      <Navbar />
-      <Hero />
+    <>
+      {isLoading && <LoadingScreen />}
+      <div className="min-h-screen transition-colors duration-500 bg-gradient-to-br from-slate-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+        <AnnouncementBanner />
+        <Navbar />
+        <Hero />
       <main className="max-w-7xl mx-auto px-4 py-16 space-y-24">
         <DeveloperInfo />
         <SyllabusView />
@@ -104,5 +123,6 @@ function AppContent(){
       {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
+    </>
   )
 }
