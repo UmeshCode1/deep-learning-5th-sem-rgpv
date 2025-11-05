@@ -61,7 +61,7 @@ export default function Navbar(){
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className={`relative w-16 h-8 rounded-full p-1 transition-all duration-500 hover:scale-110 active:scale-95 group ml-4 overflow-hidden ${
+              className={`relative w-16 h-8 rounded-full transition-all duration-500 hover:scale-110 active:scale-95 group ml-4 overflow-hidden ${
                 theme === 'dark' 
                   ? 'bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50' 
                   : 'bg-gradient-to-r from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/40 hover:shadow-indigo-500/60 border-2 border-indigo-600/40'
@@ -70,12 +70,12 @@ export default function Navbar(){
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer"></div>
-              <div className={`absolute w-6 h-6 rounded-full shadow-xl transform transition-all duration-500 ease-out flex items-center justify-center ${
+              <div className={`absolute top-1 left-1 w-6 h-6 rounded-full shadow-xl transform transition-all duration-500 ease-out flex items-center justify-center ${
                 theme === 'dark' 
                   ? 'bg-white translate-x-0 shadow-purple-400/50' 
                   : 'bg-gradient-to-br from-amber-300 to-yellow-400 translate-x-8 border-2 border-yellow-500/60 shadow-yellow-500/50'
               }`}>
-                <span className="text-sm group-hover:scale-125 group-hover:rotate-180 group-active:scale-90 transition-all duration-500">
+                <span className="text-xs group-hover:scale-125 group-hover:rotate-180 group-active:scale-90 transition-all duration-500">
                   {theme === 'dark' ? '🌙' : '☀️'}
                 </span>
               </div>
