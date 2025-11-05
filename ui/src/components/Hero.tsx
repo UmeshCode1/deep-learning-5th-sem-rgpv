@@ -189,14 +189,22 @@ export default function Hero() {
             <StatBadge icon="📝" value="5" label="Assignments" />
           </div>
 
-          {/* Scroll indicator */}
+          {/* Enhanced scroll indicator with animation */}
           <div className="mt-20 animate-bounce">
-            <div className="inline-flex flex-col items-center gap-2 text-indigo-700 dark:text-purple-300">
-              <span className="text-sm font-medium">Explore</span>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
+            <a href="#developer" className="inline-flex flex-col items-center gap-2 text-indigo-700 dark:text-purple-300 group cursor-pointer">
+              <span className="text-sm font-bold uppercase tracking-wider group-hover:text-indigo-900 dark:group-hover:text-purple-100 transition-colors">Explore More</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                <svg className="w-8 h-8 relative z-10 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+              <div className="flex gap-1 mt-2">
+                <div className="w-1.5 h-1.5 bg-indigo-600 dark:bg-purple-400 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-indigo-600 dark:bg-purple-400 rounded-full animate-pulse animation-delay-200"></div>
+                <div className="w-1.5 h-1.5 bg-indigo-600 dark:bg-purple-400 rounded-full animate-pulse animation-delay-400"></div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

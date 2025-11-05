@@ -128,11 +128,18 @@ export default function LearningTimeline() {
               } animate-fade-in`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              {/* Timeline Node */}
+              {/* Enhanced Timeline Node with ripple effect */}
               <div className="absolute left-7 sm:left-8 md:left-1/2 -translate-x-1/2 z-10">
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl border-3 sm:border-4 border-white dark:border-slate-900 animate-pulse-glow`}>
-                  <div className="text-white text-base sm:text-lg">
-                    {item.icon}
+                <div className="relative">
+                  {/* Ripple effect */}
+                  <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.color} animate-ping opacity-20`}></div>
+                  <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.color} animate-pulse opacity-30`}></div>
+                  
+                  {/* Main node */}
+                  <div className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-2xl border-3 sm:border-4 border-white dark:border-slate-900 animate-pulse-glow transform hover:scale-125 hover:rotate-12 transition-all duration-300`}>
+                    <div className="text-white text-base sm:text-lg">
+                      {item.icon}
+                    </div>
                   </div>
                 </div>
               </div>
