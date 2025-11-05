@@ -83,29 +83,29 @@ export default function Hero(){
 
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-500 dark:bg-purple-500 light:bg-purple-300 rounded-full mix-blend-multiply dark:mix-blend-multiply light:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-30 light:opacity-40 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500 dark:bg-blue-500 light:bg-blue-300 rounded-full mix-blend-multiply dark:mix-blend-multiply light:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-30 light:opacity-40 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-40 w-96 h-96 bg-pink-500 dark:bg-pink-500 light:bg-pink-300 rounded-full mix-blend-multiply dark:mix-blend-multiply light:mix-blend-normal filter blur-3xl opacity-30 dark:opacity-30 light:opacity-40 animate-blob animation-delay-4000"></div>
       </div>
 
       {/* Hero content */}
       <div className="relative max-w-7xl mx-auto px-4 py-24 text-center" style={{ zIndex: 2 }}>
         <div className="animate-fade-in">
           {/* Main title with enhanced effects */}
-          <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-6 animate-gradient neon-text animate-pulse-glow">
+          <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-6 animate-gradient animate-pulse-glow">
             Deep Learning
           </h1>
           
           {/* Course code badge */}
           <div className="inline-block mb-4 animate-slide-in-bottom stagger-1">
             <div className="glass-dark px-8 py-4 rounded-2xl border-2 border-purple-500/30 hover-lift">
-              <div className="text-4xl font-bold text-white mb-1">AL 503(B)</div>
-              <div className="text-sm text-purple-300">Course Code</div>
+              <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">AL 503(B)</div>
+              <div className="text-sm text-purple-600 dark:text-purple-300">Course Code</div>
             </div>
           </div>
 
           {/* University info */}
-          <div className="text-2xl text-purple-300 mb-12 animate-slide-in-bottom stagger-2">
+          <div className="text-2xl text-purple-700 dark:text-purple-300 mb-12 animate-slide-in-bottom stagger-2">
             <span className="inline-block px-6 py-2 glass-dark rounded-full border border-purple-500/20">
               🎓 RGPV Bhopal | 5th Semester
             </span>
@@ -132,8 +132,8 @@ export default function Hero(){
           <div className="max-w-3xl mx-auto animate-slide-in-bottom stagger-4">
             <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 hover-lift">
               <div className="flex items-start gap-4">
-                <span className="text-4xl text-purple-400">💡</span>
-                <p className="text-gray-300 text-lg italic leading-relaxed text-left">
+                <span className="text-4xl">💡</span>
+                <p className="text-slate-700 dark:text-gray-300 text-lg italic leading-relaxed text-left">
                   "This repository is part of the official coursework for Deep Learning (AL503B) 
                   under RGPV, Bhopal, following the AICTE Flexible Curriculum"
                 </p>
@@ -150,8 +150,8 @@ export default function Hero(){
 
           {/* Scroll indicator */}
           <div className="mt-20 animate-bounce">
-            <div className="inline-flex flex-col items-center gap-2 text-purple-300">
-              <span className="text-sm">Explore</span>
+            <div className="inline-flex flex-col items-center gap-2 text-purple-600 dark:text-purple-300">
+              <span className="text-sm font-medium">Explore</span>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
@@ -167,8 +167,8 @@ function StatBadge({icon, value, label}: {icon: string, value: string, label: st
   return (
     <div className="glass-dark p-4 rounded-xl border border-purple-500/20 hover-lift group">
       <div className="text-3xl mb-2 group-hover:scale-125 transition-transform">{icon}</div>
-      <div className="text-2xl font-bold text-white mb-1">{value}</div>
-      <div className="text-sm text-purple-300">{label}</div>
+      <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">{value}</div>
+      <div className="text-sm text-purple-600 dark:text-purple-300">{label}</div>
     </div>
   )
 }

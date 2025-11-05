@@ -21,7 +21,7 @@ export default function AssignmentsView(){
     <section id="assignments" className="scroll-mt-20 perspective-2000">
       <div className="flex items-center gap-3 mb-8 animate-float">
         <span className="text-5xl animate-rotate-3d">📄</span>
-        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 animate-gradient">
+        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:to-blue-400 animate-gradient">
           Assignments
         </h2>
       </div>
@@ -30,7 +30,7 @@ export default function AssignmentsView(){
       <div className="glass-dark p-6 rounded-2xl border border-purple-500/20 mb-8 animate-slide-in-bottom">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-400">Filter by difficulty:</span>
+            <span className="text-sm text-slate-600 dark:text-gray-400">Filter by difficulty:</span>
             <div className="flex gap-2">
               <button
                 onClick={() => setSelectedDifficulty(null)}
@@ -58,7 +58,7 @@ export default function AssignmentsView(){
             </div>
           </div>
 
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-slate-600 dark:text-gray-400">
             {filteredUnits.length === units.length
               ? `Showing all ${units.length} assignments`
               : `Found ${filteredUnits.length} ${selectedDifficulty} assignment${filteredUnits.length > 1 ? 's' : ''}`
@@ -94,12 +94,12 @@ export default function AssignmentsView(){
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">{u.title}</h3>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">{u.title}</h3>
                 
                 {/* Topics tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {u.topics.map(topic => (
-                    <span key={topic} className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-xs text-purple-300">
+                    <span key={topic} className="px-2 py-1 bg-purple-500/20 dark:bg-purple-500/20 border border-purple-500/30 dark:border-purple-400/30 rounded text-xs text-purple-700 dark:text-purple-300">
                       {topic}
                     </span>
                   ))}
@@ -116,7 +116,7 @@ export default function AssignmentsView(){
                   </a>
                   <a 
                     href={`../assignments/README.md`} 
-                    className="inline-flex items-center justify-center gap-2 px-4 py-3 glass-dark rounded-xl text-white/80 hover:text-white border border-purple-500/20 hover:border-purple-500/40 transition-all hover-lift"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3 glass-dark rounded-xl text-slate-700 dark:text-white/80 hover:text-slate-900 dark:hover:text-white border border-purple-500/20 hover:border-purple-500/40 transition-all hover-lift"
                   >
                     <span className="text-lg">📘</span>
                   </a>
@@ -140,12 +140,12 @@ export default function AssignmentsView(){
 
 function AssignmentStat({icon, value, label, color}: {icon: string, value: string, label: string, color: string}) {
   return (
-    <div className="glass-dark rounded-2xl p-6 border border-purple-500/20 text-center hover-lift group">
+    <div className="glass-dark rounded-2xl p-6 border border-purple-500/20 dark:border-purple-400/20 text-center hover-lift group">
       <div className="text-4xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">{icon}</div>
       <div className={`text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${color} mb-2`}>
         {value}
       </div>
-      <div className="text-sm text-gray-400">{label}</div>
+      <div className="text-sm text-slate-600 dark:text-gray-400">{label}</div>
     </div>
   )
 }

@@ -13,7 +13,7 @@ export default function SyllabusView(){
     <section id="syllabus" className="scroll-mt-20 perspective-2000">
       <div className="flex items-center gap-3 mb-8 animate-float">
         <span className="text-5xl animate-rotate-3d">📚</span>
-        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 animate-gradient">
+        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:to-blue-400 animate-gradient">
           Course Syllabus
         </h2>
       </div>
@@ -26,9 +26,9 @@ export default function SyllabusView(){
             style={{animationDelay: `${idx * 100}ms`}}
           >
             {/* 3D Card Effect */}
-            <div className="relative bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 shadow-3d hover:shadow-3d-purple transform hover:-translate-y-4 hover:scale-110 transition-all duration-500 card-3d hover:rotate-y-5">
+            <div className="relative glass-dark backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 shadow-3d hover:shadow-3d-purple transform hover:-translate-y-4 hover:scale-105 transition-all duration-500 card-3d hover-lift">
               {/* Glow effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${u.color} opacity-0 group-hover:opacity-30 rounded-2xl blur-2xl transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${u.color} opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 rounded-2xl blur-2xl transition-opacity duration-500`}></div>
               
               {/* Card content */}
               <div className="relative z-10">
@@ -41,7 +41,7 @@ export default function SyllabusView(){
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-4 group-hover:text-purple-300 dark:group-hover:text-purple-300 light:group-hover:text-purple-600 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                   {u.title}
                 </h3>
                 

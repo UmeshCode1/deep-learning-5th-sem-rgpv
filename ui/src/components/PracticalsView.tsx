@@ -27,7 +27,7 @@ export default function PracticalsView(){
       {/* Header */}
       <div className="flex items-center gap-3 mb-8 animate-float">
         <span className="text-5xl animate-rotate-3d">💻</span>
-        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 animate-gradient">
+        <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:to-blue-400 animate-gradient">
           Practical Notebooks
         </h2>
       </div>
@@ -42,7 +42,7 @@ export default function PracticalsView(){
               placeholder="Search practicals..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-slate-900/50 border border-purple-500/30 rounded-xl px-5 py-3 pl-12 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+              className="w-full bg-slate-900/50 dark:bg-slate-900/50 light:bg-white/80 border border-purple-500/30 rounded-xl px-5 py-3 pl-12 text-slate-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
             />
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -86,7 +86,7 @@ export default function PracticalsView(){
         </div>
 
         {/* Results count */}
-        <div className="mt-4 text-sm text-gray-400">
+        <div className="mt-4 text-sm text-slate-600 dark:text-gray-400">
           {filteredPracticals.length === practicals.length 
             ? `Showing all ${practicals.length} practicals`
             : `Found ${filteredPracticals.length} of ${practicals.length} practicals`
@@ -110,9 +110,9 @@ export default function PracticalsView(){
             style={{animationDelay: `${idx * 100}ms`}}
           >
             {/* 3D Card with hover effect */}
-            <div className="relative bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/90 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 shadow-3d hover:shadow-3d-purple transform hover:-translate-y-4 hover:scale-[1.02] transition-all duration-500 card-3d">
+            <div className="relative glass-dark backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 shadow-3d hover:shadow-3d-purple transform hover:-translate-y-4 hover:scale-[1.02] transition-all duration-500 card-3d hover-lift">
               {/* Glow effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${p.color} opacity-0 group-hover:opacity-20 rounded-2xl blur-2xl transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${p.color} opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 rounded-2xl blur-2xl transition-opacity duration-500`}></div>
               
               {/* Card content */}
               <div className="relative z-10">
@@ -129,11 +129,11 @@ export default function PracticalsView(){
                         <span className={`px-4 py-2 bg-gradient-to-r ${p.color} rounded-xl text-white text-base font-bold shadow-lg transform group-hover:scale-110 transition-transform`}>
                           {p.id}
                         </span>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                           {p.title}
                         </h3>
                       </div>
-                      <p className="text-gray-400 text-base group-hover:text-gray-300 transition-colors">
+                      <p className="text-slate-600 dark:text-gray-400 text-base group-hover:text-slate-700 dark:group-hover:text-gray-300 transition-colors">
                         {p.desc}
                       </p>
                     </div>
