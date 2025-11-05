@@ -87,32 +87,32 @@ function AppContent(){
         <Hero />
       <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 space-y-16 sm:space-y-20 lg:space-y-24" role="main">
         <Suspense fallback={<ComponentLoader />}>
-          <section id="developer" className="reveal scroll-fade-in">
+          <section id="developer" className="section reveal scroll-fade-in">
             <DeveloperInfo />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <section id="syllabus" className="reveal scroll-fade-in">
+          <section id="syllabus" className="section reveal scroll-fade-in">
             <SyllabusView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <section id="practicals" className="reveal scroll-fade-in">
+          <section id="practicals" className="section reveal scroll-fade-in">
             <PracticalsView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <section id="assignments" className="reveal scroll-fade-in">
+          <section id="assignments" className="section reveal scroll-fade-in">
             <AssignmentsView />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <section id="code-examples" className="reveal scroll-fade-in">
+          <section id="code-examples" className="section reveal scroll-fade-in">
             <CodePreview />
           </section>
         </Suspense>
         <Suspense fallback={<ComponentLoader />}>
-          <section id="learning-timeline" className="reveal scroll-fade-in">
+          <section id="learning-timeline" className="section reveal scroll-fade-in">
             <LearningTimeline />
           </section>
         </Suspense>
@@ -157,11 +157,11 @@ function AppContent(){
                 <span className="text-xl">⚡</span> Quick Links
               </h4>
               <ul className="space-y-2.5 sm:space-y-3">
-                <li><a href="#syllabus" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📚</span> Course Syllabus</a></li>
-                <li><a href="#practicals" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💻</span> Practicals</a></li>
-                <li><a href="#assignments" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📝</span> Assignments</a></li>
-                <li><a href="#code-examples" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💡</span> Code Examples</a></li>
-                <li><a href="#developer" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">👨‍💻</span> About Developer</a></li>
+                <li><a href="#syllabus" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📚</span> Course Syllabus</a></li>
+                <li><a href="#practicals" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💻</span> Practicals</a></li>
+                <li><a href="#assignments" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📝</span> Assignments</a></li>
+                <li><a href="#code-examples" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💡</span> Code Examples</a></li>
+                <li><a href="#developer" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">👨‍💻</span> About Developer</a></li>
               </ul>
             </div>
             

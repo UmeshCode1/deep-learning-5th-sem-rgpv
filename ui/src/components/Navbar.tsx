@@ -157,7 +157,7 @@ function NavLink({href, icon, label, activeSection}: {href: string, icon: string
     <a 
       href={href} 
       aria-current={isActive ? 'page' : undefined}
-      className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl glass-dark border transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover-lift group overflow-hidden ${
+      className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl glass-dark border btn-ghost transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover-lift group overflow-hidden ${
         isActive 
           ? 'border-purple-500/60 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-white shadow-lg shadow-purple-500/30' 
           : 'border-indigo-500/30 hover:border-indigo-500/50 text-slate-800 dark:text-gray-300 hover:text-indigo-700 dark:hover:text-white font-medium'
@@ -176,7 +176,7 @@ function MobileNavLink({href, icon, label, onClick}: {href: string, icon: string
     <a 
       href={href}
       onClick={onClick}
-      className="flex items-center gap-3 px-4 py-3 rounded-lg glass-dark border border-indigo-500/30 dark:border-purple-500/20 hover:border-indigo-500/50 dark:hover:border-purple-500/40 text-slate-800 dark:text-gray-300 hover:text-indigo-700 dark:hover:text-white transition-all duration-300 hover-lift group font-medium"
+      className="flex items-center gap-3 px-4 py-3 rounded-lg glass-dark border btn-ghost border-indigo-500/30 dark:border-purple-500/20 hover:border-indigo-500/50 dark:hover:border-purple-500/40 text-slate-800 dark:text-gray-300 hover:text-indigo-700 dark:hover:text-white transition-all duration-300 hover-lift group font-medium"
     >
       <span className="text-xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
       <span className="font-medium">{label}</span>
