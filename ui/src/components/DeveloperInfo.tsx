@@ -37,12 +37,12 @@ export default function DeveloperInfo(){
         </div>
 
         {/* Project Vision */}
-        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-r from-indigo-100/70 to-sky-100/70 dark:from-purple-900/30 dark:to-blue-900/30 rounded-2xl border border-indigo-500/30 dark:border-purple-400/20 shadow-md">
-          <h3 className="text-lg sm:text-xl font-bold text-indigo-700 dark:text-purple-300 mb-2 sm:mb-3 flex items-center gap-2">
+        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-r from-indigo-100 to-sky-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-2xl border-2 border-indigo-500/50 dark:border-purple-400/20 shadow-lg">
+          <h3 className="text-lg sm:text-xl font-bold text-indigo-900 dark:text-purple-300 mb-2 sm:mb-3 flex items-center gap-2">
             <span>🎯</span> Project Vision
           </h3>
-          <p className="text-sm sm:text-base text-slate-800 dark:text-gray-300 leading-relaxed font-medium">
-            This repository provides an <span className="text-indigo-700 dark:text-purple-400 font-bold">interactive and well-documented</span> learning environment 
+          <p className="text-sm sm:text-base text-gray-900 dark:text-gray-300 leading-relaxed font-medium">
+            This repository provides an <span className="text-indigo-900 dark:text-purple-400 font-bold">interactive and well-documented</span> learning environment 
             for Deep Learning as per the RGPV syllabus — combining theory, practicals, and real-world demonstrations through organized notes, 
             Jupyter notebooks, responsive React UI, and reference materials.
           </p>
@@ -67,11 +67,11 @@ export default function DeveloperInfo(){
 
 function InfoCard({icon, label, value}: {icon: string, label: string, value: string}){
   return (
-    <div className="flex items-start gap-3 p-4 sm:p-5 bg-gradient-to-br from-white to-indigo-50/50 dark:from-slate-900/80 dark:to-slate-800/50 rounded-xl border-2 border-indigo-500/40 dark:border-purple-500/30 hover:border-indigo-600/60 dark:hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/30 dark:hover:shadow-purple-500/25 card-3d group">
+    <div className="flex items-start gap-3 p-4 sm:p-5 bg-gradient-to-br from-white to-indigo-50 dark:from-slate-900/80 dark:to-slate-800/50 rounded-xl border-2 border-indigo-600/50 dark:border-purple-500/30 hover:border-indigo-600/80 dark:hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/30 dark:hover:shadow-purple-500/25 card-3d group shadow-md">
       <span className="text-2xl sm:text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{icon}</span>
       <div>
-        <div className="text-sm text-indigo-700 dark:text-gray-400 mb-1 font-bold uppercase tracking-wide">{label}</div>
-        <div className="text-black dark:text-white font-bold text-base">{value}</div>
+        <div className="text-sm text-indigo-900 dark:text-gray-400 mb-1 font-bold uppercase tracking-wide">{label}</div>
+        <div className="text-gray-900 dark:text-white font-bold text-base">{value}</div>
       </div>
     </div>
   )
