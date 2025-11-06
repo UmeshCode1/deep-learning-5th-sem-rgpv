@@ -2254,3 +2254,129 @@ body[data-reduced-effects="true"] .scroll-scale-up {
 [data-theme="light"] .tile-ripple-effect {
   background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(99, 102, 241, 0) 70%);
 }
+
+/* ========================================
+   GLITCH FIXES & IMPROVEMENTS
+   ======================================== */
+
+/* Z-Index Layering System (Fixed) */
+.z-45 {
+  z-index: 45;
+}
+
+/* Prevent animation glitches on page load */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    animation-play-state: running !important;
+  }
+}
+
+/* Fix transform glitches */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth scroll anchoring */
+html {
+  scroll-padding-top: 96px; /* Navbar height offset */
+}
+
+/* Fix modal backdrop blur performance */
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-lg {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  will-change: backdrop-filter;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Fix text rendering glitches */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent button double-tap zoom on mobile */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* Fix iOS Safari button styling */
+button,
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Prevent text selection during animations */
+.animate-slide-in-bottom,
+.animate-fade-in-up,
+.animate-bounce-in {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Fix gradient banding */
+.bg-gradient-to-br,
+.bg-gradient-to-r {
+  background-attachment: fixed;
+}
+
+/* Prevent flickering on hover transitions */
+.hover-lift,
+.hover-depth,
+.card-hover {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Fix border-radius overflow */
+.overflow-hidden {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+/* Smooth transitions for theme changes */
+[data-theme] * {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Prevent animation jank */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fix floating element positioning */
+.fixed {
+  position: fixed;
+  transform: translateZ(0);
+}
+
+/* Improve image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Fix sticky header glitch */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}

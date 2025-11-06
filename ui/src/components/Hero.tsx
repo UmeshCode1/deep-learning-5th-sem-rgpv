@@ -129,7 +129,7 @@ export default function Hero() {
       <canvas 
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none transform-gpu"
-        style={{ zIndex: 1, willChange: 'transform' }}
+        style={{ zIndex: 1 }}
       />
 
       {/* Animated background blobs */}

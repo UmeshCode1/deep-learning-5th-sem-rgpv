@@ -110,12 +110,12 @@ export default function KeyboardShortcuts() {
     <>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-fade-in"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70] animate-fade-in"
         onClick={() => setIsOpen(false)}
       />
 
       {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4">
         <div 
           className="glass-dark backdrop-blur-xl rounded-xl sm:rounded-2xl border border-purple-500/30 shadow-2xl max-w-3xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-hidden animate-scale-in"
           onClick={(e) => e.stopPropagation()}
