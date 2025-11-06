@@ -166,7 +166,7 @@ function FooterWithEntrance() {
   return (
     <footer ref={ref} className={`relative mt-16 sm:mt-24 overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
       {/* Enhanced Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-900 dark:via-pink-900 dark:to-blue-900 opacity-95"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 dark:from-purple-900 dark:via-pink-900 dark:to-blue-900"></div>
       
       {/* Animated Blobs with better positioning */}
       <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-indigo-500/30 dark:bg-purple-500/30 rounded-full filter blur-3xl animate-blob"></div>

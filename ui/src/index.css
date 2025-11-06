@@ -1856,13 +1856,14 @@ kbd {
 }
 [data-theme="light"] .tile-card {
   color: #1e293b;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(79, 70, 229, 0.3);
-  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.3);
 }
 [data-theme="light"] .tile-card:hover {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.22);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .tile-icon {
@@ -1913,8 +1914,10 @@ kbd {
 .tile-text { display: flex; flex-direction: column; }
 .tile-title { font-weight: 900; letter-spacing: -0.01em; transition: color 0.2s ease; }
 .tile-card:hover .tile-title { color: #6366f1; }
+[data-theme="light"] .tile-card .tile-title { color: #1e293b; font-weight: 900; }
 [data-theme="light"] .tile-card:hover .tile-title { color: #4f46e5; }
 .tile-sub { font-size: 0.8rem; opacity: 0.85; transition: opacity 0.2s ease; }
+[data-theme="light"] .tile-card .tile-sub { color: #475569; opacity: 0.9; }
 .tile-card:hover .tile-sub { opacity: 1; }
 
 /* ========================================
