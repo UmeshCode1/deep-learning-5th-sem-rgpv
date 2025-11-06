@@ -11,6 +11,7 @@ import AnnouncementBanner from './components/AnnouncementBanner'
 import KeyboardShortcuts from './components/KeyboardShortcuts'
 import { initScrollAnimations } from './utils/scrollAnimations'
 import { initRevealAnimations, runWhenIdle } from './utils/performance'
+import { useIntersectionObserver } from './hooks/useIntersectionObserver'
 
 // Lazy load heavy components for better performance
 const DeveloperInfo = lazy(() => import('./components/DeveloperInfo'))
@@ -137,34 +138,60 @@ function AppContent(){
       <KeyboardShortcuts />
       
       {/* Enhanced Modern Footer */}
-      <footer className="relative mt-16 sm:mt-24 overflow-hidden">
-        {/* Enhanced Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-900 dark:via-pink-900 dark:to-blue-900 opacity-95"></div>
-        
-        {/* Animated Blobs with better positioning */}
-        <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-indigo-500/30 dark:bg-purple-500/30 rounded-full filter blur-3xl animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-pink-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-        
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 pb-32 sm:pb-40">
-          {/* Footer Content Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-            {/* About Section - Enhanced */}
-            <div className="text-white sm:col-span-2 lg:col-span-1">
-              <div className="flex items-center gap-3 mb-4 sm:mb-5">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-xl transform hover:rotate-12 hover:scale-110 transition-all duration-300">
-                  🧠
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight">Deep Learning Hub</h3>
+      <FooterWithEntrance />
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
+    </div>
+    </>
+  )
+}
+
+// Footer component with entrance animation
+function FooterWithEntrance() {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.15, triggerOnce: true })
+  const [ripples, setRipples] = useState<Array<{id: number, x: number, y: number}>>([])
+
+  const handleTileClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const id = Date.now()
+    setRipples(prev => [...prev, { id, x, y }])
+    setTimeout(() => {
+      setRipples(prev => prev.filter(r => r.id !== id))
+    }, 600)
+  }
+
+  return (
+    <footer ref={ref} className={`relative mt-16 sm:mt-24 overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+      {/* Enhanced Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-purple-900 dark:via-pink-900 dark:to-blue-900 opacity-95"></div>
+      
+      {/* Animated Blobs with better positioning */}
+      <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-indigo-500/30 dark:bg-purple-500/30 rounded-full filter blur-3xl animate-blob"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-pink-500/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 pb-32 sm:pb-40">
+        {/* Footer Content Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+          {/* About Section - Enhanced */}
+          <div className="text-white sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4 sm:mb-5">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-xl transform hover:rotate-12 hover:scale-110 transition-all duration-300">
+                🧠
               </div>
-              <p className="text-white/95 leading-relaxed font-medium text-sm sm:text-base mb-4">
-                A comprehensive, interactive resource for Deep Learning (AL 503B) course under RGPV University, Bhopal.
-              </p>
-              <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-semibold">
-                <span className="text-lg">🎓</span>
-                <span>AI & ML Engineering</span>
-              </div>
+              <h3 className="text-xl sm:text-2xl font-black tracking-tight">Deep Learning Hub</h3>
             </div>
+            <p className="text-white/95 leading-relaxed font-medium text-sm sm:text-base mb-4">
+              A comprehensive, interactive resource for Deep Learning (AL 503B) course under RGPV University, Bhopal.
+            </p>
+            <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-semibold">
+              <span className="text-lg">🎓</span>
+              <span>AI & ML Engineering</span>
+            </div>
+          </div>
             
             {/* Quick Links - Tile Cards */}
             <div className="text-white">
@@ -308,11 +335,18 @@ function AppContent(){
             {/* Tech Stack pills removed for a cleaner footer */}
           </div>
         </div>
+
+        {/* Ripple effects container */}
+        {ripples.map(ripple => (
+          <span
+            key={ripple.id}
+            className="tile-ripple-effect"
+            style={{
+              left: ripple.x,
+              top: ripple.y,
+            }}
+          />
+        ))}
       </footer>
-      
-      {/* Scroll to Top Button */}
-      <ScrollToTop />
-    </div>
-    </>
-  )
-}
+    )
+  }
