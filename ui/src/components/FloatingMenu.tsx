@@ -29,6 +29,7 @@ export default function FloatingMenu() {
             href={item.href}
             onClick={() => setIsOpen(false)}
             aria-label={item.label}
+            title={item.label}
             className={`group flex items-center gap-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 border-2 border-white/20 overflow-hidden`}
             style={{
               animationDelay: `${index * 50}ms`,

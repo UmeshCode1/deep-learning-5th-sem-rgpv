@@ -213,6 +213,22 @@ export default function Hero() {
             <li className="list-none"><StatBadge icon="📝" value="5" label="Assignments" /></li>
           </ul>
 
+          {/* Primary CTAs */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4 animate-slide-in-bottom stagger-5">
+            <a href="#syllabus" className="btn btn-primary btn-pill shadow-3d hover-depth">
+              <span className="text-lg" aria-hidden="true">📚</span>
+              <span className="font-bold">Open Syllabus</span>
+            </a>
+            <a href="#practicals" className="btn btn-secondary btn-pill hover-depth">
+              <span className="text-lg" aria-hidden="true">💻</span>
+              <span className="font-bold">View Practicals</span>
+            </a>
+            <a href="#assignments" className="btn btn-ghost btn-pill hover-depth">
+              <span className="text-lg" aria-hidden="true">📝</span>
+              <span className="font-bold">See Assignments</span>
+            </a>
+          </div>
+
           {/* Enhanced scroll indicator with animation */}
           <div className="mt-20 animate-bounce">
             <a href="#developer" className="inline-flex flex-col items-center gap-2 text-indigo-700 dark:text-purple-300 group cursor-pointer">
