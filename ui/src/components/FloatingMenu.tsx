@@ -1,8 +1,12 @@
-import React, { useMemo, useState } from 'react'
-import { Menu, X, BookOpen, Code, FileText, User, Home, Sparkles } from 'lucide-react'
+import React, { useEffect, useMemo, useState } from 'react'
+import { Menu, X, BookOpen, Code, FileText, User, Home, Sparkles, ZapOff } from 'lucide-react'
 
 export default function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [reduced, setReduced] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false
+    return localStorage.getItem('reducedEffects') === '1'
+  })
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === 'undefined' || !window.matchMedia) return false
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -16,6 +20,18 @@ export default function FloatingMenu() {
     { icon: FileText, label: 'Assignments', href: '#assignments', color: 'from-violet-500 to-purple-500' },
     { icon: Sparkles, label: 'Code Examples', href: '#code-examples', color: 'from-yellow-500 to-amber-500' },
   ]
+
+  // Keep body attribute in sync
+  useEffect(() => {
+    const body = document.body
+    if (reduced) {
+      body.setAttribute('data-reduced-effects', 'true')
+      localStorage.setItem('reducedEffects', '1')
+    } else {
+      body.removeAttribute('data-reduced-effects')
+      localStorage.removeItem('reducedEffects')
+    }
+  }, [reduced])
 
   return (
     <div className="fixed bottom-[calc(env(safe-area-inset-bottom)+6rem)] right-[calc(env(safe-area-inset-right)+0.75rem)] sm:bottom-[calc(env(safe-area-inset-bottom)+7rem)] sm:right-[calc(env(safe-area-inset-right)+2rem)] z-50">
@@ -48,6 +64,17 @@ export default function FloatingMenu() {
           </a>
         ))}
       </div>
+
+      {/* Effects toggle (micro control) */}
+      <button
+        onClick={() => setReduced((v) => !v)}
+        className="absolute -top-3 -left-3 w-9 h-9 rounded-full bg-white dark:bg-slate-800 border-2 border-white/20 shadow-md hover:shadow-lg flex items-center justify-center has-tooltip"
+        aria-pressed={reduced}
+        aria-label={reduced ? 'Enable effects' : 'Reduce effects'}
+      >
+        {reduced ? <ZapOff className="w-4 h-4 text-slate-700 dark:text-gray-300" /> : <Sparkles className="w-4 h-4 text-indigo-600" />}
+        <span className="tooltip">{reduced ? 'Effects off' : 'Effects on'}</span>
+      </button>
 
       {/* Toggle Button */}
       <button

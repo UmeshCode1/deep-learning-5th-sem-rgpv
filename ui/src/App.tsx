@@ -73,6 +73,14 @@ function AppContent(){
     }
   }, [isLoading])
 
+  // Initialize reduced effects from persistence
+  useEffect(() => {
+    try {
+      const reduced = localStorage.getItem('reducedEffects') === '1'
+      if (reduced) document.body.setAttribute('data-reduced-effects', 'true')
+    } catch {}
+  }, [])
+
   return (
     <>
       {isLoading && <LoadingScreen />}
@@ -158,31 +166,94 @@ function AppContent(){
               </div>
             </div>
             
-            {/* Quick Links - Enhanced */}
+            {/* Quick Links - Tile Cards */}
             <div className="text-white">
               <h4 className="text-base sm:text-lg font-black mb-3 sm:mb-4 uppercase tracking-wider flex items-center gap-2">
                 <span className="text-xl">⚡</span> Quick Links
               </h4>
-              <ul className="space-y-2.5 sm:space-y-3">
-                <li><a href="#syllabus" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📚</span> Course Syllabus</a></li>
-                <li><a href="#practicals" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💻</span> Practicals</a></li>
-                <li><a href="#assignments" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📝</span> Assignments</a></li>
-                <li><a href="#code-examples" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">💡</span> Code Examples</a></li>
-                <li><a href="#developer" className="btn btn-ghost w-full justify-start text-white/90 hover:text-white text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">👨‍💻</span> About Developer</a></li>
-              </ul>
+              <div className="grid grid-cols-1 gap-3 sm:gap-4">
+                <a href="#syllabus" className="tile-card has-tooltip" aria-label="Open syllabus">
+                  <span className="tile-icon">📚</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Course Syllabus</span>
+                    <span className="tile-sub">All units and outcomes</span>
+                  </div>
+                  <span className="tooltip">Syllabus</span>
+                </a>
+                <a href="#practicals" className="tile-card has-tooltip" aria-label="View practicals">
+                  <span className="tile-icon">💻</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Practicals</span>
+                    <span className="tile-sub">Hands-on notebooks</span>
+                  </div>
+                  <span className="tooltip">Practicals</span>
+                </a>
+                <a href="#assignments" className="tile-card has-tooltip" aria-label="See assignments">
+                  <span className="tile-icon">📝</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Assignments</span>
+                    <span className="tile-sub">Coursework tasks</span>
+                  </div>
+                  <span className="tooltip">Assignments</span>
+                </a>
+                <a href="#code-examples" className="tile-card has-tooltip" aria-label="Explore code examples">
+                  <span className="tile-icon">💡</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Code Examples</span>
+                    <span className="tile-sub">Reference snippets</span>
+                  </div>
+                  <span className="tooltip">Code Examples</span>
+                </a>
+                <a href="#developer" className="tile-card has-tooltip" aria-label="About developer">
+                  <span className="tile-icon">👨‍💻</span>
+                  <div className="tile-text">
+                    <span className="tile-title">About Developer</span>
+                    <span className="tile-sub">Know the creator</span>
+                  </div>
+                  <span className="tooltip">Developer</span>
+                </a>
+              </div>
             </div>
             
-            {/* Resources - New Section */}
+            {/* Resources - Tile Cards */}
             <div className="text-white">
               <h4 className="text-base sm:text-lg font-black mb-3 sm:mb-4 uppercase tracking-wider flex items-center gap-2">
                 <span className="text-xl">📖</span> Resources
               </h4>
-              <ul className="space-y-2.5 sm:space-y-3">
-                <li><a href="../syllabus/deep_learning_syllabus.md" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📄</span> Full Syllabus PDF</a></li>
-                <li><a href="#learning-timeline" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">🗓️</span> Learning Path</a></li>
-                <li><a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">📦</span> Source Code</a></li>
-                <li><a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/issues" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm sm:text-base transition-all hover:translate-x-2 hover:gap-3 group"><span className="group-hover:scale-125 transition-transform">🐛</span> Report Issues</a></li>
-              </ul>
+              <div className="grid grid-cols-1 gap-3 sm:gap-4">
+                <a href="../syllabus/deep_learning_syllabus.md" className="tile-card has-tooltip">
+                  <span className="tile-icon">📄</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Full Syllabus</span>
+                    <span className="tile-sub">Markdown version</span>
+                  </div>
+                  <span className="tooltip">Open syllabus file</span>
+                </a>
+                <a href="#learning-timeline" className="tile-card has-tooltip">
+                  <span className="tile-icon">🗓️</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Learning Path</span>
+                    <span className="tile-sub">Timeline & milestones</span>
+                  </div>
+                  <span className="tooltip">See roadmap</span>
+                </a>
+                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip">
+                  <span className="tile-icon">📦</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Source Code</span>
+                    <span className="tile-sub">GitHub repository</span>
+                  </div>
+                  <span className="tooltip">Open on GitHub</span>
+                </a>
+                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/issues" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip">
+                  <span className="tile-icon">🐛</span>
+                  <div className="tile-text">
+                    <span className="tile-title">Report Issues</span>
+                    <span className="tile-sub">Create a ticket</span>
+                  </div>
+                  <span className="tooltip">Open issues</span>
+                </a>
+              </div>
             </div>
             
             {/* Contact & Social - Enhanced */}
@@ -234,14 +305,7 @@ function AppContent(){
               </div>
             </div>
             
-            {/* Tech Stack Badge */}
-            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/20 flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm text-white/80 font-semibold">
-              <span className="flex items-center gap-1 bg-white/10 px-2 sm:px-3 py-1 rounded-full">⚛️ React</span>
-              <span className="flex items-center gap-1 bg-white/10 px-2 sm:px-3 py-1 rounded-full">🎨 Tailwind CSS</span>
-              <span className="flex items-center gap-1 bg-white/10 px-2 sm:px-3 py-1 rounded-full">📘 TypeScript</span>
-              <span className="flex items-center gap-1 bg-white/10 px-2 sm:px-3 py-1 rounded-full">⚡ Vite</span>
-              <span className="flex items-center gap-1 bg-white/10 px-2 sm:px-3 py-1 rounded-full">🧠 Deep Learning</span>
-            </div>
+            {/* Tech Stack pills removed for a cleaner footer */}
           </div>
         </div>
       </footer>
