@@ -41,46 +41,7 @@ export default function ScrollProgress() {
         </div>
       </div>
 
-      {/* Circular Progress Indicator (Bottom Left) */}
-      <div className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-40 hidden md:block">
-        <div className="relative w-14 h-14 sm:w-16 sm:h-16">
-          {/* Background circle */}
-          <svg className="w-full h-full transform -rotate-90">
-            <circle
-              cx="50%"
-              cy="50%"
-              r="28"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              className="text-slate-300 dark:text-slate-700"
-            />
-            {/* Progress circle */}
-            <circle
-              cx="50%"
-              cy="50%"
-              r="28"
-              fill="none"
-              stroke="url(#progress-gradient)"
-              strokeWidth="3"
-              strokeDasharray={`${(scrollProgress / 100) * 176} 176`}
-              strokeLinecap="round"
-              className="transition-all duration-300 drop-shadow-lg"
-            />
-            {/* Gradient definition */}
-            <defs>
-              <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#6366f1" />
-                <stop offset="50%" stopColor="#a855f7" />
-                <stop offset="100%" stopColor="#ec4899" />
-              </linearGradient>
-            </defs>
-          </svg>
-          
-          {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 opacity-20 blur-lg animate-pulse"></div>
-        </div>
-      </div>
+      {/* Bottom-left circular progress removed to reduce visual clutter */}
     </>
   )
 }

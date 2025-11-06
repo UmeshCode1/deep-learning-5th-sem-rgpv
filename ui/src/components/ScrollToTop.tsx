@@ -54,30 +54,7 @@ export default function ScrollToTop() {
         <div className="absolute inset-0 rounded-full border-2 border-white/50 animate-ping opacity-0 group-hover:opacity-100"></div>
       </button>
 
-      {/* Progress Ring */}
-      <div className="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto">
-        <svg className="w-full h-full transform -rotate-90">
-          <circle
-            cx="50%"
-            cy="50%"
-            r="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            className="text-indigo-200 dark:text-purple-800"
-          />
-          <circle
-            cx="50%"
-            cy="50%"
-            r="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeDasharray={`${(window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 125} 125`}
-            className="text-indigo-600 dark:text-purple-400 transition-all duration-300"
-          />
-        </svg>
-      </div>
+      {/* Progress ring removed for cleaner UI */}
     </div>
   )
 }

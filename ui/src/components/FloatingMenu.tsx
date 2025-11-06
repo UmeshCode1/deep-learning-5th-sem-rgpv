@@ -71,10 +71,7 @@ export default function FloatingMenu() {
           <Menu className="w-6 h-6 sm:w-7 sm:h-7 relative z-10 transition-transform duration-300" />
         )}
         
-        {/* Pulse ring */}
-        {!isOpen && (
-          <div className="absolute inset-0 rounded-full border-2 border-white/50 animate-ping opacity-75"></div>
-        )}
+        {/* Pulse ring removed for cleaner UI */}
       </button>
       {/* Hidden container id for aria-controls linkage */}
       <div id="floating-quick-menu" hidden aria-hidden={!isOpen}></div>
