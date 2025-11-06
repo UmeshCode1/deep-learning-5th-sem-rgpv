@@ -124,7 +124,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <div id="hero" className="relative overflow-hidden perspective-2000 min-h-screen flex items-center">
+    <section id="hero" aria-labelledby="hero-title" className="relative overflow-hidden perspective-2000 min-h-screen flex items-center">
       {/* Particle canvas */}
       <canvas 
         ref={canvasRef}
@@ -143,9 +143,10 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 text-center" style={{ zIndex: 2 }}>
         <div className="animate-fade-in">
           {/* Main title with modern typography */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-6 sm:mb-8 animate-gradient animate-pulse-glow tracking-tighter leading-none drop-shadow-2xl">
+          <h1 id="hero-title" className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 mb-6 sm:mb-8 animate-gradient animate-pulse-glow tracking-tighter leading-none drop-shadow-2xl">
             Deep Learning
           </h1>
+          <p className="sr-only">Course landing hero for Deep Learning AL 503(B) at RGPV, Bhopal</p>
           
           {/* Course code badge with modern design */}
           <div className="inline-block mb-5 sm:mb-6 animate-slide-in-bottom stagger-1">
@@ -155,27 +156,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Dynamic Typing Subtitle */}
+          {/* Dynamic Typing Subtitle (aria-live for SR) */}
           <div className="mb-6 sm:mb-8 animate-slide-in-bottom stagger-2">
-            <div className="glass-modern px-4 py-3 sm:px-8 sm:py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl">
+            <div className="glass-modern px-4 py-3 sm:px-8 sm:py-4 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 inline-block shadow-xl" role="status" aria-live="polite" aria-atomic="true">
               <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 rounded-full animate-pulse" aria-hidden="true"></div>
                 <p className="text-base sm:text-xl md:text-2xl font-bold text-black dark:text-white min-h-[24px] sm:min-h-[32px]">
                   {typedText}
-                  <span className="animate-pulse">|</span>
+                  <span className="animate-pulse" aria-hidden="true">|</span>
                 </p>
               </div>
             </div>
           </div>
           
-          {/* University info with enhanced styling */}
-          <div className="text-base sm:text-xl md:text-2xl text-indigo-700 dark:text-purple-300 mb-8 sm:mb-12 animate-slide-in-bottom stagger-3 font-semibold">
-            <span className="inline-block px-4 py-2 sm:px-8 sm:py-3 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
-              🎓 RGPV Bhopal | 5th Semester
-            </span>
-          </div>
+          {/* Course meta chips (semantic list) */}
+          <ul role="list" aria-label="Course metadata" className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-base sm:text-xl md:text-2xl text-indigo-700 dark:text-purple-300 mb-8 sm:mb-12 animate-slide-in-bottom stagger-3 font-semibold">
+            <li>
+              <span className="inline-block px-4 py-2 sm:px-6 sm:py-2.5 glass-modern rounded-full border border-purple-500/30 dark:border-purple-400/30 font-semibold micro-interact shadow-lg">
+                🎓 RGPV Bhopal · 5th Semester
+              </span>
+            </li>
+          </ul>
           
-          {/* Developer card with modern design */}
+          {/* Author card */}
           <div className="inline-block mb-8 sm:mb-12 animate-slide-in-bottom stagger-3">
             <div className="glass-modern px-6 py-4 sm:px-12 sm:py-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group cursor-pointer shadow-2xl">
               <div className="flex items-center gap-3 sm:gap-5">
@@ -203,12 +206,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Quick stats with modern cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-16 animate-slide-in-bottom stagger-5">
-            <StatBadge icon="📚" value="5" label="Units" />
-            <StatBadge icon="💻" value="5" label="Practicals" />
-            <StatBadge icon="📝" value="5" label="Assignments" />
-          </div>
+          {/* Quick stats with semantic list */}
+          <ul role="list" aria-label="Course stats" className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-16 animate-slide-in-bottom stagger-5">
+            <li className="list-none"><StatBadge icon="📚" value="5" label="Units" /></li>
+            <li className="list-none"><StatBadge icon="💻" value="5" label="Practicals" /></li>
+            <li className="list-none"><StatBadge icon="📝" value="5" label="Assignments" /></li>
+          </ul>
 
           {/* Enhanced scroll indicator with animation */}
           <div className="mt-20 animate-bounce">
@@ -229,14 +232,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
 function StatBadge({icon, value, label}: {icon: string, value: string, label: string}) {
   return (
-    <div className="glass-modern card-glass card-hover p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group">
-      <div className="text-5xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-smooth">{icon}</div>
+    <div className="glass-modern card-glass card-hover p-6 rounded-2xl border border-purple-500/30 dark:border-purple-400/30 modern-card neon-glow group" aria-label={`${value} ${label}`}>
+      <div className="text-5xl mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 float-smooth" aria-hidden="true">{icon}</div>
       <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 mb-2">{value}</div>
       <div className="text-sm font-bold text-indigo-700 dark:text-purple-300 uppercase tracking-widest">{label}</div>
     </div>
