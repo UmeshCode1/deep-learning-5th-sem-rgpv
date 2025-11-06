@@ -171,8 +171,8 @@ function AppContent(){
               <h4 className="text-base sm:text-lg font-black mb-3 sm:mb-4 uppercase tracking-wider flex items-center gap-2">
                 <span className="text-xl">⚡</span> Quick Links
               </h4>
-              <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                <a href="#syllabus" className="tile-card has-tooltip" aria-label="Open syllabus">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <a href="#syllabus" className="tile-card has-tooltip" aria-label="Open syllabus" style={{animationDelay: '0ms'}}>
                   <span className="tile-icon">📚</span>
                   <div className="tile-text">
                     <span className="tile-title">Course Syllabus</span>
@@ -180,7 +180,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Syllabus</span>
                 </a>
-                <a href="#practicals" className="tile-card has-tooltip" aria-label="View practicals">
+                <a href="#practicals" className="tile-card has-tooltip" aria-label="View practicals" style={{animationDelay: '50ms'}}>
                   <span className="tile-icon">💻</span>
                   <div className="tile-text">
                     <span className="tile-title">Practicals</span>
@@ -188,7 +188,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Practicals</span>
                 </a>
-                <a href="#assignments" className="tile-card has-tooltip" aria-label="See assignments">
+                <a href="#assignments" className="tile-card has-tooltip" aria-label="See assignments" style={{animationDelay: '100ms'}}>
                   <span className="tile-icon">📝</span>
                   <div className="tile-text">
                     <span className="tile-title">Assignments</span>
@@ -196,7 +196,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Assignments</span>
                 </a>
-                <a href="#code-examples" className="tile-card has-tooltip" aria-label="Explore code examples">
+                <a href="#code-examples" className="tile-card has-tooltip" aria-label="Explore code examples" style={{animationDelay: '150ms'}}>
                   <span className="tile-icon">💡</span>
                   <div className="tile-text">
                     <span className="tile-title">Code Examples</span>
@@ -204,7 +204,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Code Examples</span>
                 </a>
-                <a href="#developer" className="tile-card has-tooltip" aria-label="About developer">
+                <a href="#developer" className="tile-card has-tooltip md:col-span-2" aria-label="About developer" style={{animationDelay: '200ms'}}>
                   <span className="tile-icon">👨‍💻</span>
                   <div className="tile-text">
                     <span className="tile-title">About Developer</span>
@@ -220,8 +220,8 @@ function AppContent(){
               <h4 className="text-base sm:text-lg font-black mb-3 sm:mb-4 uppercase tracking-wider flex items-center gap-2">
                 <span className="text-xl">📖</span> Resources
               </h4>
-              <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                <a href="../syllabus/deep_learning_syllabus.md" className="tile-card has-tooltip">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <a href="../syllabus/deep_learning_syllabus.md" className="tile-card has-tooltip" style={{animationDelay: '0ms'}}>
                   <span className="tile-icon">📄</span>
                   <div className="tile-text">
                     <span className="tile-title">Full Syllabus</span>
@@ -229,7 +229,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Open syllabus file</span>
                 </a>
-                <a href="#learning-timeline" className="tile-card has-tooltip">
+                <a href="#learning-timeline" className="tile-card has-tooltip" style={{animationDelay: '50ms'}}>
                   <span className="tile-icon">🗓️</span>
                   <div className="tile-text">
                     <span className="tile-title">Learning Path</span>
@@ -237,7 +237,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">See roadmap</span>
                 </a>
-                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip">
+                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip" style={{animationDelay: '100ms'}}>
                   <span className="tile-icon">📦</span>
                   <div className="tile-text">
                     <span className="tile-title">Source Code</span>
@@ -245,7 +245,7 @@ function AppContent(){
                   </div>
                   <span className="tooltip">Open on GitHub</span>
                 </a>
-                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/issues" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip">
+                <a href="https://github.com/UmeshCode1/deep-learning-5th-sem-rgpv/issues" target="_blank" rel="noopener noreferrer" className="tile-card has-tooltip" style={{animationDelay: '150ms'}}>
                   <span className="tile-icon">🐛</span>
                   <div className="tile-text">
                     <span className="tile-title">Report Issues</span>

@@ -68,12 +68,12 @@ export default function FloatingMenu() {
       {/* Effects toggle (micro control) */}
       <button
         onClick={() => setReduced((v) => !v)}
-        className="absolute -top-3 -left-3 w-9 h-9 rounded-full bg-white dark:bg-slate-800 border-2 border-white/20 shadow-md hover:shadow-lg flex items-center justify-center has-tooltip"
+        className="absolute -top-3 -left-3 w-9 h-9 rounded-full bg-white dark:bg-slate-800 border-2 border-white/20 shadow-md hover:shadow-lg flex items-center justify-center has-tooltip transition-transform duration-200 hover:scale-110"
         aria-pressed={reduced}
         aria-label={reduced ? 'Enable effects' : 'Reduce effects'}
       >
         {reduced ? <ZapOff className="w-4 h-4 text-slate-700 dark:text-gray-300" /> : <Sparkles className="w-4 h-4 text-indigo-600" />}
-        <span className="tooltip">{reduced ? 'Effects off' : 'Effects on'}</span>
+        <span className="tooltip-top">{reduced ? 'Effects off' : 'Effects on'}</span>
       </button>
 
       {/* Toggle Button */}
