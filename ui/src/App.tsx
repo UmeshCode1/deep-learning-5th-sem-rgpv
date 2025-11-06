@@ -21,14 +21,14 @@ const AssignmentsView = lazy(() => import('./components/AssignmentsView'))
 const CodePreview = lazy(() => import('./components/CodePreview'))
 const LearningTimeline = lazy(() => import('./components/LearningTimeline'))
 
-// Loading fallback component
+// Loading fallback component - Minimal and fast
 function ComponentLoader() {
   return (
-    <div className="flex items-center justify-center py-20">
+    <div className="flex items-center justify-center py-12 opacity-50">
       <div className="relative">
-        <div className="w-16 h-16 border-4 border-indigo-200 dark:border-purple-800 border-t-indigo-600 dark:border-t-purple-400 rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-3 border-indigo-200 dark:border-purple-700 border-t-indigo-500 dark:border-t-purple-400 rounded-full animate-spin"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl">🧠</span>
+          <span className="text-xl">🧠</span>
         </div>
       </div>
     </div>
