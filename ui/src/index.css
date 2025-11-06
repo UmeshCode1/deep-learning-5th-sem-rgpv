@@ -484,6 +484,9 @@ html {
 
 .section {
   @apply scroll-mt-24; /* tailwind 6rem */
+  /* Improve paint perf for off-screen sections */
+  content-visibility: auto;
+  contain-intrinsic-size: 800px 1px; /* reasonable estimate to prevent layout jumps */
 }
 .section-content {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;

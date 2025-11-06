@@ -32,7 +32,7 @@ export default function Hero() {
     return () => clearInterval(typingInterval)
   }, [subtitleIndex])
 
-  // Particle animation
+  // Particle animation (optimized)
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -40,11 +40,22 @@ export default function Hero() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    // Setup size with devicePixelRatio for crisp rendering
+    const setSize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const width = window.innerWidth
+      const height = window.innerHeight
+      canvas.style.width = width + 'px'
+      canvas.style.height = height + 'px'
+      canvas.width = Math.floor(width * dpr)
+      canvas.height = Math.floor(height * dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+    }
+    setSize()
 
+    const isMobile = window.innerWidth < 768
+    const particleCount = isMobile ? 30 : 50
     const particles: Array<{x: number, y: number, vx: number, vy: number, size: number}> = []
-    const particleCount = 50
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -56,6 +67,7 @@ export default function Hero() {
       })
     }
 
+    let rafId: number
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
@@ -72,11 +84,11 @@ export default function Hero() {
         ctx.fill()
 
         // Draw connections
-        particles.slice(i + 1).forEach(p2 => {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j]
           const dx = p.x - p2.x
           const dy = p.y - p2.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
-
+          const dist = Math.hypot(dx, dy)
           if (dist < 150) {
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
@@ -85,21 +97,30 @@ export default function Hero() {
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
-        })
+        }
       })
 
-      requestAnimationFrame(animate)
+      rafId = requestAnimationFrame(animate)
     }
+    rafId = requestAnimationFrame(animate)
 
-    animate()
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+    // Debounced resize with rAF
+    let resizeTicking = false
+    const onResize = () => {
+      if (!resizeTicking) {
+        resizeTicking = true
+        requestAnimationFrame(() => {
+          setSize()
+          resizeTicking = false
+        })
+      }
     }
+    window.addEventListener('resize', onResize, { passive: true })
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', onResize)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
@@ -107,8 +128,8 @@ export default function Hero() {
       {/* Particle canvas */}
       <canvas 
         ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 1 }}
+        className="absolute inset-0 pointer-events-none transform-gpu"
+        style={{ zIndex: 1, willChange: 'transform' }}
       />
 
       {/* Animated background blobs */}
