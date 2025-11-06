@@ -73,7 +73,7 @@ export default function FloatingMenu() {
         aria-label={reduced ? 'Enable effects' : 'Reduce effects'}
       >
         {reduced ? <ZapOff className="w-4 h-4 text-slate-700 dark:text-gray-300" /> : <Sparkles className="w-4 h-4 text-indigo-600" />}
-        <span className="tooltip-top">{reduced ? 'Effects off' : 'Effects on'}</span>
+        <span className="tooltip-top whitespace-nowrap">{reduced ? 'Enable Effects' : 'Reduce Effects'}</span>
       </button>
 
       {/* Toggle Button */}
